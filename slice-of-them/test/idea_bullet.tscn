@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh5bumd13ljmw"]
+
+[ext_resource type="Script" path="res://test/idea_bullet.gd" id="1_koerr"]
+[ext_resource type="Texture2D" uid="uid://c108d5wyjojp1" path="res://icon.svg" id="1_up3jc"]
+
+[node name="IdeaBullet" type="Node2D"]
+script = ExtResource("1_koerr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_up3jc")
