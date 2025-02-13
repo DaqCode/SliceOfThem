@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://pb0qsj7ilxc7"]
+
+[ext_resource type="Script" path="res://resources/sword/swordType/vampire_blade.gd" id="1_0pbro"]
+
+[node name="VampireBlade" type="Node2D"]
+script = ExtResource("1_0pbro")
+damage = 2000

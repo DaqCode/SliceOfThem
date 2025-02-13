@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://3rwloaffk3vp"]
+
+[ext_resource type="PackedScene" uid="uid://pb0qsj7ilxc7" path="res://resources/sword/swordType/vampire_blade.tscn" id="1_mune1"]
+[ext_resource type="PackedScene" uid="uid://ueoulx8dpkno" path="res://resources/sword/swordType/wooden_sword.tscn" id="2_nwfyo"]
+[ext_resource type="PackedScene" uid="uid://cnjebjkxqijf8" path="res://scenes/characters/mainCharacter/son_heat.tscn" id="3_op7rj"]
+
+[node name="SwordTests" type="Node2D"]
+texture_filter = 1
+
+[node name="VampireBlade" parent="." instance=ExtResource("1_mune1")]
+position = Vector2(357, 520)
+
+[node name="WoodenSword" parent="." instance=ExtResource("2_nwfyo")]
+position = Vector2(189, 358)
+sword_name = null
+
+[node name="SonHeat" parent="." instance=ExtResource("3_op7rj")]
+position = Vector2(338, 452)

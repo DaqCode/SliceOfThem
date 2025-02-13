@@ -11,10 +11,9 @@ config_version=5
 [application]
 
 config/name="Slice Of Them"
-run/main_scene="res://test/character.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
+[rendering]
 
-GlobalItems="*res://global/globalItems.gd"
+textures/canvas_textures/default_texture_filter=0
