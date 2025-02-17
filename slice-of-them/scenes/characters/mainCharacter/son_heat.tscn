@@ -1,35 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnjebjkxqijf8"]
+[gd_scene load_steps=7 format=3 uid="uid://cnjebjkxqijf8"]
 
 [ext_resource type="Texture2D" uid="uid://u4csu23bqy74" path="res://art/characters/mainCharacter/frame0001.png" id="1_7rcpx"]
+[ext_resource type="PackedScene" uid="uid://r1swp42jfqwa" path="res://resources/sword/swordType/iron_sword.tscn" id="2_j2mj3"]
 [ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="2_n1j1n"]
+[ext_resource type="PackedScene" uid="uid://bga24bcuyc2dq" path="res://resources/sword/swordType/bronze_sword.tscn" id="3_evgrt"]
 [ext_resource type="PackedScene" uid="uid://ueoulx8dpkno" path="res://resources/sword/swordType/wooden_sword.tscn" id="3_s84ju"]
+[ext_resource type="PackedScene" uid="uid://1r2mskismxxj" path="res://resources/sword/swordType/diamond_sword.tscn" id="3_uo53s"]
 
 [node name="SonHeat" type="Node2D"]
 
 [node name="BaseSword" type="Node" parent="."]
 script = ExtResource("2_n1j1n")
 
-[node name="WoodenSword" parent="BaseSword" instance=ExtResource("3_s84ju")]
-position = Vector2(300, 478)
+[node name="IronSword" parent="BaseSword" instance=ExtResource("2_j2mj3")]
+position = Vector2(413, 432)
 
-[node name="WoodenSword2" parent="BaseSword" instance=ExtResource("3_s84ju")]
-position = Vector2(631, 450)
+[node name="DiamondSword" parent="BaseSword" instance=ExtResource("3_uo53s")]
+position = Vector2(511, 398)
 
-[node name="WoodenSword3" parent="BaseSword" instance=ExtResource("3_s84ju")]
-position = Vector2(397, 405)
-
-[node name="WoodenSword4" parent="BaseSword" instance=ExtResource("3_s84ju")]
-position = Vector2(498, 584)
-
-[node name="WoodenSword5" parent="BaseSword" instance=ExtResource("3_s84ju")]
-position = Vector2(390, 603)
-
-[node name="WoodenSword6" parent="BaseSword" instance=ExtResource("3_s84ju")]
-position = Vector2(526, 388)
-
-[node name="Frame0001" type="Sprite2D" parent="."]
+[node name="Frame0001" type="Sprite2D" parent="BaseSword"]
 position = Vector2(458, 578)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("1_7rcpx")
 offset = Vector2(2.85714, -431.428)
 flip_h = true
+
+[node name="WoodenSword" parent="BaseSword" instance=ExtResource("3_s84ju")]
+position = Vector2(300, 478)
+
+[node name="BronzeSword" parent="BaseSword" instance=ExtResource("3_evgrt")]
+position = Vector2(563, 516)

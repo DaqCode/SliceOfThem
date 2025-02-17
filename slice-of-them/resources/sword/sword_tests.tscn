@@ -12,7 +12,7 @@ position = Vector2(357, 520)
 
 [node name="WoodenSword" parent="." instance=ExtResource("2_nwfyo")]
 position = Vector2(189, 358)
-sword_name = null
+sword_name = ""
 
 [node name="SonHeat" parent="." instance=ExtResource("3_op7rj")]
 position = Vector2(338, 452)

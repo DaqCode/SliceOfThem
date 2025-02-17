@@ -4,8 +4,8 @@ extends "res://resources/sword/BaseSword.gd"
 
 func _ready() -> void:
 	await get_tree().create_timer(randf_range(0.0,0.5)).timeout
-	animation.play("idle")
+	animation.play("SwordAnimation/idle")
 	await get_tree().create_timer(5.0).timeout
-	animation.play("slice")
+	animation.play("SwordAnimation/slice")
 	await get_tree().create_timer(5.0).timeout
-	animation.play("defend")
+	animation.play("SwordAnimation/defend")
