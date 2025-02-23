@@ -1,7 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://pb0qsj7ilxc7"]
+[gd_scene load_steps=9 format=3 uid="uid://pb0qsj7ilxc7"]
 
-[ext_resource type="Script" path="res://resources/sword/swordType/vampire_blade.gd" id="1_0pbro"]
+[ext_resource type="Script" path="res://resources/sword/swordType/Wood_Sword.gd" id="1_3m28c"]
+[ext_resource type="Texture2D" uid="uid://btm23ny86uhc1" path="res://art/swords/VampireBlade/VampireBlade.png" id="2_mjx42"]
+[ext_resource type="Texture2D" uid="uid://b6xbdfqqh4xjx" path="res://art/swords/VampireBlade/VampireBladeSwing.png" id="3_5olto"]
+[ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="4_gk3ch"]
+[ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="5_ufogj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qa3yg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mjx42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5olto")
+}],
+"loop": false,
+"name": &"swing",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vqhhf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_gk3ch")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyew8"]
+_data = {
+"RESET": SubResource("Animation_vqhhf")
+}
 
 [node name="VampireBlade" type="Node2D"]
-script = ExtResource("1_0pbro")
+script = ExtResource("1_3m28c")
 damage = 2000
+
+[node name="Sword" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -78)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_qa3yg")
+animation = &"swing"
+
+[node name="AnimationControl" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vyew8"),
+"SwordAnimation": ExtResource("5_ufogj")
+}

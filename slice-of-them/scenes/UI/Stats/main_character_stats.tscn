@@ -1,0 +1,291 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwddmjgv0766x"]
+
+[ext_resource type="Script" path="res://main_character_stats.gd" id="1_p70dg"]
+[ext_resource type="Texture2D" uid="uid://c108d5wyjojp1" path="res://icon.svg" id="2_nqswt"]
+
+[node name="MainCharacterStats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p70dg")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.593134, 0.593134, 0.593134, 1)
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+position = Vector2(669, 444)
+texture = ExtResource("2_nqswt")
+
+[node name="StatContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 15.0
+offset_right = 431.0
+offset_bottom = 628.0
+theme_override_constants/v_separation = 24
+
+[node name="CharStats" type="Panel" parent="StatContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="5StatsContain" type="GridContainer" parent="StatContainer/CharStats"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.5
+offset_top = -79.5
+offset_right = 189.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 7
+columns = 2
+
+[node name="Health" type="Button" parent="StatContainer/CharStats/5StatsContain"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Health Upgrade: 14"
+
+[node name="Attack" type="Button" parent="StatContainer/CharStats/5StatsContain"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Attack Upgrade: 14"
+
+[node name="Defense" type="Button" parent="StatContainer/CharStats/5StatsContain"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Defense Upgrade: 14"
+
+[node name="Agility" type="Button" parent="StatContainer/CharStats/5StatsContain"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Agility Upgrade: 14"
+
+[node name="Crit" type="Button" parent="StatContainer/CharStats"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.5
+offset_top = -1.5
+offset_right = 93.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Critical Upgrade: 14"
+
+[node name="Indicator" type="Panel" parent="StatContainer/CharStats"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 134.0
+offset_right = 403.0
+offset_bottom = 173.0
+
+[node name="WhatStatChange" type="Label" parent="StatContainer/CharStats/Indicator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = -18.0
+offset_right = 187.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Crit : %0.6 -> Crit: %0.7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharSkills" type="Panel" parent="StatContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="StatContainer/CharSkills"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -73.5
+offset_right = 202.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="PoisonBottle" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DizzyingSand" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BottleOfWind" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BoxOfSpikes" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GlaciorSmoke" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ClusterSharpener" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LightningSmite" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FISH" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StaerieSmash" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button10" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CharNumStats" type="Panel" parent="StatContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Stats" type="Label" parent="StatContainer/CharNumStats"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.5
+offset_top = -91.0
+offset_right = -52.5
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Health:
+Attack:
+Block Chance:
+Block Effect:
+Dodge Change:
+Critical Chance:
+Critical Multiplier:"
+autowrap_mode = 2
+
+[node name="NumberStats" type="Label" parent="StatContainer/CharNumStats"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -91.0
+offset_right = 202.5
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="SkillInventory" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -666.0
+offset_top = 18.0
+offset_right = -22.0
+offset_bottom = 128.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="SkillInventory"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 132.0
+offset_right = 648.0
+offset_bottom = 288.0
+
+[node name="SkillInventory2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -306.0
+offset_top = 334.0
+offset_right = -33.0
+offset_bottom = 617.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="SkillInventory2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.5
+offset_top = -112.5
+offset_right = 111.5
+offset_bottom = 112.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is for the skill stuff. 
+Shows description of what they do."
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="StatContainer/CharStats/5StatsContain/Health" to="." method="_on_health_mouse_entered"]
+[connection signal="pressed" from="StatContainer/CharStats/5StatsContain/Health" to="." method="_on_health_pressed"]
+[connection signal="mouse_entered" from="StatContainer/CharStats/5StatsContain/Attack" to="." method="_on_attack_mouse_entered"]
+[connection signal="pressed" from="StatContainer/CharStats/5StatsContain/Attack" to="." method="_on_attack_pressed"]
+[connection signal="mouse_entered" from="StatContainer/CharStats/5StatsContain/Defense" to="." method="_on_defense_mouse_entered"]
+[connection signal="pressed" from="StatContainer/CharStats/5StatsContain/Defense" to="." method="_on_defense_pressed"]
+[connection signal="mouse_entered" from="StatContainer/CharStats/5StatsContain/Agility" to="." method="_on_agility_mouse_entered"]
+[connection signal="pressed" from="StatContainer/CharStats/5StatsContain/Agility" to="." method="_on_agility_pressed"]
+[connection signal="mouse_entered" from="StatContainer/CharStats/Crit" to="." method="_on_crit_mouse_entered"]
+[connection signal="pressed" from="StatContainer/CharStats/Crit" to="." method="_on_crit_pressed"]

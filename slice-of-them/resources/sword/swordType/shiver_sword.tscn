@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://drr6cx3plov3u"]
+
+[ext_resource type="Texture2D" uid="uid://db2eehqrvh5xl" path="res://art/swords/ShiverSword/SaphireSword.png" id="1_abltk"]
+[ext_resource type="Script" path="res://resources/sword/swordType/Wood_Sword.gd" id="1_ltglp"]
+[ext_resource type="Texture2D" uid="uid://cnneqlctnbhxh" path="res://art/swords/ShiverSword/SaphireSwordSwing.png" id="2_4ijsy"]
+[ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="3_vf6o1"]
+[ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="4_c3oqg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11vha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_abltk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4ijsy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vqhhf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_vf6o1")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyew8"]
+_data = {
+"RESET": SubResource("Animation_vqhhf")
+}
+
+[node name="ShiverSword" type="Node2D"]
+script = ExtResource("1_ltglp")
+
+[node name="Sword" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -78)
+rotation = 6.28319
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_11vha")
+
+[node name="AnimationControl" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vyew8"),
+"SwordAnimation": ExtResource("4_c3oqg")
+}

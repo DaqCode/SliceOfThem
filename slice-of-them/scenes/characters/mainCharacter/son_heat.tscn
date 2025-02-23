@@ -1,32 +1,52 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnjebjkxqijf8"]
+[gd_scene load_steps=13 format=3 uid="uid://cnjebjkxqijf8"]
 
-[ext_resource type="Texture2D" uid="uid://u4csu23bqy74" path="res://art/characters/mainCharacter/frame0001.png" id="1_7rcpx"]
 [ext_resource type="PackedScene" uid="uid://r1swp42jfqwa" path="res://resources/sword/swordType/iron_sword.tscn" id="2_j2mj3"]
 [ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="2_n1j1n"]
 [ext_resource type="PackedScene" uid="uid://bga24bcuyc2dq" path="res://resources/sword/swordType/bronze_sword.tscn" id="3_evgrt"]
 [ext_resource type="PackedScene" uid="uid://ueoulx8dpkno" path="res://resources/sword/swordType/wooden_sword.tscn" id="3_s84ju"]
 [ext_resource type="PackedScene" uid="uid://1r2mskismxxj" path="res://resources/sword/swordType/diamond_sword.tscn" id="3_uo53s"]
+[ext_resource type="PackedScene" uid="uid://pb0qsj7ilxc7" path="res://resources/sword/swordType/vampire_blade.tscn" id="7_7y1db"]
+[ext_resource type="PackedScene" uid="uid://drr6cx3plov3u" path="res://resources/sword/swordType/shiver_sword.tscn" id="8_11p6g"]
+[ext_resource type="PackedScene" uid="uid://c5jvq275nqo6c" path="res://resources/sword/swordType/double_shadow_spear.tscn" id="8_t0bkr"]
+[ext_resource type="PackedScene" uid="uid://ba7jupvtv0gh6" path="res://resources/sword/swordType/voids_cleaver.tscn" id="9_p3wrq"]
+[ext_resource type="PackedScene" uid="uid://cgextcrb6k8yp" path="res://resources/sword/swordType/crystalized_sword.tscn" id="10_eovys"]
+[ext_resource type="PackedScene" uid="uid://cj4gfurud4wh5" path="res://resources/sword/swordType/rainbow_sword.tscn" id="11_m5gav"]
+[ext_resource type="PackedScene" uid="uid://dteydf0cb041l" path="res://resources/sword/swordType/staeries_last_hope.tscn" id="12_aay6g"]
 
 [node name="SonHeat" type="Node2D"]
 
 [node name="BaseSword" type="Node" parent="."]
 script = ExtResource("2_n1j1n")
 
-[node name="IronSword" parent="BaseSword" instance=ExtResource("2_j2mj3")]
-position = Vector2(413, 432)
-
-[node name="DiamondSword" parent="BaseSword" instance=ExtResource("3_uo53s")]
-position = Vector2(511, 398)
-
-[node name="Frame0001" type="Sprite2D" parent="BaseSword"]
-position = Vector2(458, 578)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("1_7rcpx")
-offset = Vector2(2.85714, -431.428)
-flip_h = true
-
 [node name="WoodenSword" parent="BaseSword" instance=ExtResource("3_s84ju")]
-position = Vector2(300, 478)
+position = Vector2(214, 298)
 
 [node name="BronzeSword" parent="BaseSword" instance=ExtResource("3_evgrt")]
-position = Vector2(563, 516)
+position = Vector2(408, 297)
+
+[node name="IronSword" parent="BaseSword" instance=ExtResource("2_j2mj3")]
+position = Vector2(581, 316)
+
+[node name="DiamondSword" parent="BaseSword" instance=ExtResource("3_uo53s")]
+position = Vector2(761, 304)
+
+[node name="VampireBlade" parent="BaseSword" instance=ExtResource("7_7y1db")]
+position = Vector2(258, 643)
+
+[node name="ShiverSword" parent="BaseSword" instance=ExtResource("8_11p6g")]
+position = Vector2(539, 632)
+
+[node name="DoubleShadowSpear" parent="BaseSword" instance=ExtResource("8_t0bkr")]
+position = Vector2(755, 712)
+
+[node name="VoidsCleaver" parent="BaseSword" instance=ExtResource("9_p3wrq")]
+position = Vector2(944, 719)
+
+[node name="CrystalizedSword" parent="BaseSword" instance=ExtResource("10_eovys")]
+position = Vector2(182, 1125)
+
+[node name="RainbowSword" parent="BaseSword" instance=ExtResource("11_m5gav")]
+position = Vector2(427, 1060)
+
+[node name="StaeriesLastHope" parent="." instance=ExtResource("12_aay6g")]
+position = Vector2(797, 1079)

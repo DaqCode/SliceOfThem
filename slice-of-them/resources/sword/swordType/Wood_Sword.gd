@@ -3,9 +3,10 @@ extends "res://resources/sword/BaseSword.gd"
 @onready var animation : AnimationPlayer = $AnimationControl
 
 func _ready() -> void:
-	await get_tree().create_timer(randf_range(0.0,0.5)).timeout
-	animation.play("SwordAnimation/idle")
-	await get_tree().create_timer(5.0).timeout
-	animation.play("SwordAnimation/slice")
-	await get_tree().create_timer(5.0).timeout
-	animation.play("SwordAnimation/defend")
+    var animations = ["idle", "slice", "defend"]
+    var current_animation = 0
+
+    while true:
+        animation.play("SwordAnimation/" + animations[current_animation])
+        await get_tree().create_timer(5.0).timeout
+        current_animation = (current_animation + 1) % animations.size()

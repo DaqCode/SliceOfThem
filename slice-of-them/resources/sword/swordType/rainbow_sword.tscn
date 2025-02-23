@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://cj4gfurud4wh5"]
+
+[ext_resource type="Texture2D" uid="uid://nyny55fnm0q8" path="res://art/swords/RainbowSword/RainbowSword.png" id="1_dgflm"]
+[ext_resource type="Script" path="res://resources/sword/swordType/Wood_Sword.gd" id="1_kovpr"]
+[ext_resource type="Texture2D" uid="uid://wuplpj7euire" path="res://art/swords/RainbowSword/RainbowSwordSwing.png" id="2_njomi"]
+[ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="3_5bcrp"]
+[ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="4_y3pne"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgdwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dgflm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_njomi")
+}],
+"loop": true,
+"name": &"swing",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_fib0f"]
+offsets = PackedFloat32Array(0, 0.766234, 1)
+colors = PackedColorArray(0.501961, 0.380392, 1, 1, 0.227273, 0.227273, 0.227273, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6lwly"]
+gradient = SubResource("Gradient_fib0f")
+
+[sub_resource type="Gradient" id="Gradient_arkao"]
+offsets = PackedFloat32Array(0.857143, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8u7kk"]
+gradient = SubResource("Gradient_arkao")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ko3ur"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 1, 1)
+angle_min = -360.0
+angle_max = 360.0
+spread = 180.0
+initial_velocity_min = -300.0
+initial_velocity_max = 300.0
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+gravity = Vector3(0, 48, 0)
+linear_accel_min = -50.0
+linear_accel_max = 500.0
+scale_min = 6.0
+scale_max = 8.0
+scale_over_velocity_min = 1.0
+scale_over_velocity_max = 3.0
+color_ramp = SubResource("GradientTexture1D_8u7kk")
+color_initial_ramp = SubResource("GradientTexture1D_6lwly")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+anim_offset_max = 1.0
+
+[sub_resource type="Animation" id="Animation_vqhhf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_5bcrp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyew8"]
+_data = {
+"RESET": SubResource("Animation_vqhhf")
+}
+
+[node name="RainbowSword" type="Node2D"]
+script = ExtResource("1_kovpr")
+
+[node name="Sword" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_lgdwr")
+animation = &"swing"
+
+[node name="RainbowSparkle" type="GPUParticles2D" parent="Sword"]
+position = Vector2(-1.11111, -50)
+rotation = -1.57524
+scale = Vector2(1.11111, 1.11111)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_ko3ur")
+
+[node name="AnimationControl" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vyew8"),
+"SwordAnimation": ExtResource("4_y3pne")
+}
