@@ -42,6 +42,9 @@ _data = {
 
 [node name="IronSword" type="Node2D"]
 script = ExtResource("1_hna3c")
+sword_name = "Iron Sword"
+attack_bonus = 750
+defense_bonus = 25
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -78)

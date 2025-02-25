@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnjebjkxqijf8"]
+[gd_scene load_steps=14 format=3 uid="uid://cnjebjkxqijf8"]
 
 [ext_resource type="PackedScene" uid="uid://r1swp42jfqwa" path="res://resources/sword/swordType/iron_sword.tscn" id="2_j2mj3"]
 [ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="2_n1j1n"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c5jvq275nqo6c" path="res://resources/sword/swordType/double_shadow_spear.tscn" id="8_t0bkr"]
 [ext_resource type="PackedScene" uid="uid://ba7jupvtv0gh6" path="res://resources/sword/swordType/voids_cleaver.tscn" id="9_p3wrq"]
 [ext_resource type="PackedScene" uid="uid://cgextcrb6k8yp" path="res://resources/sword/swordType/crystalized_sword.tscn" id="10_eovys"]
+[ext_resource type="PackedScene" uid="uid://c40yap22skpv8" path="res://resources/sword/swordType/shocked_dagger.tscn" id="11_bku2d"]
 [ext_resource type="PackedScene" uid="uid://cj4gfurud4wh5" path="res://resources/sword/swordType/rainbow_sword.tscn" id="11_m5gav"]
 [ext_resource type="PackedScene" uid="uid://dteydf0cb041l" path="res://resources/sword/swordType/staeries_last_hope.tscn" id="12_aay6g"]
 
@@ -44,9 +45,30 @@ position = Vector2(944, 719)
 
 [node name="CrystalizedSword" parent="BaseSword" instance=ExtResource("10_eovys")]
 position = Vector2(182, 1125)
+sword_name = "Crystalized Sword"
+attack_bonus = 8550
+defense_bonus = 750
+special_effect = "coinboost"
+
+[node name="ShockedDagger" parent="BaseSword" instance=ExtResource("11_bku2d")]
+position = Vector2(410, 1019)
+sword_name = "Shocked Dagger"
+attack_bonus = 9000
+special_effect = "stun"
+effect_value = 30.0
 
 [node name="RainbowSword" parent="BaseSword" instance=ExtResource("11_m5gav")]
-position = Vector2(427, 1060)
+position = Vector2(628, 1047)
+sword_name = "Rainbow Sword"
+attack_bonus = 10000
+defense_bonus = 1000
+agility_bonus = 100
+crit_bonus = 100
 
-[node name="StaeriesLastHope" parent="." instance=ExtResource("12_aay6g")]
-position = Vector2(797, 1079)
+[node name="StaeriesLastHope" parent="BaseSword" instance=ExtResource("12_aay6g")]
+position = Vector2(878, 1116)
+sword_name = "Staerie's Last Hope"
+attack_bonus = 15000
+defense_bonus = 1500
+agility_bonus = 1500
+crit_bonus = 1500

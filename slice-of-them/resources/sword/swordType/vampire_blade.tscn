@@ -42,7 +42,9 @@ _data = {
 
 [node name="VampireBlade" type="Node2D"]
 script = ExtResource("1_3m28c")
-damage = 2000
+sword_name = "Vampire  Blade"
+attack_bonus = 1050
+special_effect = "lifesteal"
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -78)

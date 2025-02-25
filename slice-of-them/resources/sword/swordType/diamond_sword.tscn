@@ -42,6 +42,9 @@ _data = {
 
 [node name="DiamondSword" type="Node2D"]
 script = ExtResource("1_27x0t")
+sword_name = "Diamond Sword"
+attack_bonus = 1050
+defense_bonus = 75
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -78)
