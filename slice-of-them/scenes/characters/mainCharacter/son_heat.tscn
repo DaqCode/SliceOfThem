@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnjebjkxqijf8"]
+[gd_scene load_steps=15 format=3 uid="uid://cnjebjkxqijf8"]
 
+[ext_resource type="Script" path="res://scenes/characters/mainCharacter/son_heat.gd" id="1_aiad2"]
 [ext_resource type="PackedScene" uid="uid://r1swp42jfqwa" path="res://resources/sword/swordType/iron_sword.tscn" id="2_j2mj3"]
-[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="2_n1j1n"]
 [ext_resource type="PackedScene" uid="uid://bga24bcuyc2dq" path="res://resources/sword/swordType/bronze_sword.tscn" id="3_evgrt"]
 [ext_resource type="PackedScene" uid="uid://ueoulx8dpkno" path="res://resources/sword/swordType/wooden_sword.tscn" id="3_s84ju"]
 [ext_resource type="PackedScene" uid="uid://1r2mskismxxj" path="res://resources/sword/swordType/diamond_sword.tscn" id="3_uo53s"]
@@ -14,61 +14,78 @@
 [ext_resource type="PackedScene" uid="uid://cj4gfurud4wh5" path="res://resources/sword/swordType/rainbow_sword.tscn" id="11_m5gav"]
 [ext_resource type="PackedScene" uid="uid://dteydf0cb041l" path="res://resources/sword/swordType/staeries_last_hope.tscn" id="12_aay6g"]
 
-[node name="SonHeat" type="Node2D"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_45vtb"]
 
-[node name="BaseSword" type="Node" parent="."]
-script = ExtResource("2_n1j1n")
+[node name="SonHeat" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_aiad2")
 
-[node name="WoodenSword" parent="BaseSword" instance=ExtResource("3_s84ju")]
-position = Vector2(214, 298)
+[node name="SwordShow" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 5.0
+offset_right = 2879.0
+offset_bottom = 619.0
+alignment = 1
 
-[node name="BronzeSword" parent="BaseSword" instance=ExtResource("3_evgrt")]
-position = Vector2(408, 297)
+[node name="WoodenSword" parent="SwordShow" instance=ExtResource("3_s84ju")]
+position = Vector2(191, 390)
 
-[node name="IronSword" parent="BaseSword" instance=ExtResource("2_j2mj3")]
-position = Vector2(581, 316)
+[node name="BronzeSword" parent="SwordShow" instance=ExtResource("3_evgrt")]
+position = Vector2(408, 402)
 
-[node name="DiamondSword" parent="BaseSword" instance=ExtResource("3_uo53s")]
-position = Vector2(761, 304)
+[node name="IronSword" parent="SwordShow" instance=ExtResource("2_j2mj3")]
+position = Vector2(581, 402)
 
-[node name="VampireBlade" parent="BaseSword" instance=ExtResource("7_7y1db")]
-position = Vector2(258, 643)
+[node name="DiamondSword" parent="SwordShow" instance=ExtResource("3_uo53s")]
+position = Vector2(761, 402)
 
-[node name="ShiverSword" parent="BaseSword" instance=ExtResource("8_11p6g")]
-position = Vector2(539, 632)
+[node name="VampireBlade" parent="SwordShow" instance=ExtResource("7_7y1db")]
+position = Vector2(1054, 402)
 
-[node name="DoubleShadowSpear" parent="BaseSword" instance=ExtResource("8_t0bkr")]
-position = Vector2(755, 712)
+[node name="ShiverSword" parent="SwordShow" instance=ExtResource("8_11p6g")]
+position = Vector2(1335, 402)
 
-[node name="VoidsCleaver" parent="BaseSword" instance=ExtResource("9_p3wrq")]
-position = Vector2(944, 719)
+[node name="DoubleShadowSpear" parent="SwordShow" instance=ExtResource("8_t0bkr")]
+position = Vector2(1551, 402)
+crit_bonus = 0
+special_effect = "poison"
 
-[node name="CrystalizedSword" parent="BaseSword" instance=ExtResource("10_eovys")]
-position = Vector2(182, 1125)
-sword_name = "Crystalized Sword"
-attack_bonus = 8550
-defense_bonus = 750
-special_effect = "coinboost"
+[node name="VoidsCleaver" parent="SwordShow" instance=ExtResource("9_p3wrq")]
+position = Vector2(1740, 402)
 
-[node name="ShockedDagger" parent="BaseSword" instance=ExtResource("11_bku2d")]
-position = Vector2(410, 1019)
-sword_name = "Shocked Dagger"
-attack_bonus = 9000
-special_effect = "stun"
-effect_value = 30.0
+[node name="CrystalizedSword" parent="SwordShow" instance=ExtResource("10_eovys")]
+position = Vector2(1992, 402)
 
-[node name="RainbowSword" parent="BaseSword" instance=ExtResource("11_m5gav")]
-position = Vector2(628, 1047)
-sword_name = "Rainbow Sword"
-attack_bonus = 10000
-defense_bonus = 1000
-agility_bonus = 100
-crit_bonus = 100
+[node name="ShockedDagger" parent="SwordShow" instance=ExtResource("11_bku2d")]
+position = Vector2(2220, 310)
 
-[node name="StaeriesLastHope" parent="BaseSword" instance=ExtResource("12_aay6g")]
-position = Vector2(878, 1116)
-sword_name = "Staerie's Last Hope"
-attack_bonus = 15000
-defense_bonus = 1500
-agility_bonus = 1500
-crit_bonus = 1500
+[node name="RainbowSword" parent="SwordShow" instance=ExtResource("11_m5gav")]
+position = Vector2(2438, 314)
+
+[node name="StaeriesLastHope" parent="SwordShow" instance=ExtResource("12_aay6g")]
+position = Vector2(2688, 299)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
+position = Vector2(591, 322)
+position_smoothing_enabled = true
+
+[node name="Left" type="Panel" parent="Camera2D"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -320.0
+offset_right = -447.0
+offset_bottom = 320.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_45vtb")
+
+[node name="Right" type="Panel" parent="Camera2D"]
+offset_left = 449.0
+offset_top = -321.0
+offset_right = 576.0
+offset_bottom = 319.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_45vtb")

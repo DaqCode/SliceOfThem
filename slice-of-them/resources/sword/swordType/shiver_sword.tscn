@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://drr6cx3plov3u"]
 
 [ext_resource type="Texture2D" uid="uid://db2eehqrvh5xl" path="res://art/swords/ShiverSword/SaphireSword.png" id="1_abltk"]
-[ext_resource type="Script" path="res://resources/sword/swordType/Wood_Sword.gd" id="1_ltglp"]
+[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_kd2yf"]
 [ext_resource type="Texture2D" uid="uid://cnneqlctnbhxh" path="res://art/swords/ShiverSword/SaphireSwordSwing.png" id="2_4ijsy"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="3_vf6o1"]
 [ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="4_c3oqg"]
@@ -41,7 +41,7 @@ _data = {
 }
 
 [node name="ShiverSword" type="Node2D"]
-script = ExtResource("1_ltglp")
+script = ExtResource("1_kd2yf")
 sword_name = "Shiver Sword"
 attack_bonus = 2500
 defense_bonus = 200

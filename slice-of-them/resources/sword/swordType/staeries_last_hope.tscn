@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dteydf0cb041l"]
 
-[ext_resource type="Script" path="res://resources/sword/swordType/Wood_Sword.gd" id="1_epnpm"]
+[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_73n7k"]
 [ext_resource type="Texture2D" uid="uid://b51ha53bnks2g" path="res://art/swords/StaerieLastHope/StaerieLastHope.png" id="1_ukv1w"]
 [ext_resource type="Texture2D" uid="uid://bmtroehra30y4" path="res://art/swords/StaerieLastHope/StaerieLastHopeSwing.png" id="2_4uo5k"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="3_qadha"]
@@ -71,7 +71,12 @@ _data = {
 }
 
 [node name="StaeriesLastHope" type="Node2D"]
-script = ExtResource("1_epnpm")
+script = ExtResource("1_73n7k")
+sword_name = "Staerie's Last Hope"
+attack_bonus = 15000
+defense_bonus = 1500
+agility_bonus = 1500
+crit_bonus = 1500
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mptio")

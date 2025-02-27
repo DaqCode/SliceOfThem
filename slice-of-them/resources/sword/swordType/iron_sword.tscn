@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://r1swp42jfqwa"]
 
 [ext_resource type="Texture2D" uid="uid://i7o3vyreldr6" path="res://art/swords/IronSword/IronSword.png" id="1_0v3h5"]
-[ext_resource type="Script" path="res://resources/sword/swordType/Wood_Sword.gd" id="1_hna3c"]
+[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_d38ul"]
 [ext_resource type="Texture2D" uid="uid://cohikgg3pqt7x" path="res://art/swords/IronSword/IronSwordSwing.png" id="2_ixoqs"]
 [ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="3_yux6k"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="4_j6my7"]
@@ -41,7 +41,7 @@ _data = {
 }
 
 [node name="IronSword" type="Node2D"]
-script = ExtResource("1_hna3c")
+script = ExtResource("1_d38ul")
 sword_name = "Iron Sword"
 attack_bonus = 750
 defense_bonus = 25

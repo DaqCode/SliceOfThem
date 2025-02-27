@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://newxx6db1803"]
+
+[ext_resource type="FontFile" uid="uid://o5soyfcvjipw" path="res://resources/Fonts/BalooChettan-Regular(MAPS).ttf" id="1_1q7wu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4g76"]
+
+[resource]
+Button/colors/font_hover_color = Color(0.419608, 0.603922, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 5
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_1q7wu")
+Button/styles/disabled = SubResource("StyleBoxEmpty_o4g76")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_o4g76")
+Button/styles/focus = SubResource("StyleBoxEmpty_o4g76")
+Button/styles/hover = SubResource("StyleBoxEmpty_o4g76")
+Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_o4g76")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_o4g76")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_o4g76")
+Button/styles/normal = SubResource("StyleBoxEmpty_o4g76")
+Button/styles/pressed = SubResource("StyleBoxEmpty_o4g76")
+Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_o4g76")

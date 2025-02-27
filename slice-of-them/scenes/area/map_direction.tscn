@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://rb71hfq6sg4y"]
+
+[ext_resource type="Script" path="res://scenes/area/map_direction.gd" id="1_4malm"]
+[ext_resource type="Texture2D" uid="uid://cyfpv4nuh8lco" path="res://art/background/MapPicture.png" id="1_whunq"]
+[ext_resource type="Texture2D" uid="uid://c3eqma71qq3di" path="res://art/characters/mainCharacter/heatSit.png" id="2_gg2ru"]
+[ext_resource type="Theme" uid="uid://b1sr6ihqwtgyv" path="res://resources/Textures/UIPurpose/MapMenuThemeNormal.tres" id="2_h6iwt"]
+
+[node name="MapDirection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4malm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.969137, 0.969137, 0.969137, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_whunq")
+
+[node name="Player" type="Button" parent="."]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 398.0
+offset_right = 487.0
+offset_bottom = 496.0
+theme = ExtResource("2_h6iwt")
+text = "Inventory"
+icon = ExtResource("2_gg2ru")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Blacksmith" type="Button" parent="."]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 175.0
+offset_right = 987.0
+offset_bottom = 273.0
+theme = ExtResource("2_h6iwt")
+text = "Blacksmith"
+icon = ExtResource("2_gg2ru")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Training" type="Button" parent="."]
+layout_mode = 0
+offset_left = 721.0
+offset_top = 372.0
+offset_right = 831.0
+offset_bottom = 470.0
+theme = ExtResource("2_h6iwt")
+text = "Training
+"
+icon = ExtResource("2_gg2ru")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 86.0
+offset_right = 615.0
+offset_bottom = 184.0
+theme = ExtResource("2_h6iwt")
+text = "Library"
+icon = ExtResource("2_gg2ru")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Fight" type="Button" parent="."]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 141.0
+offset_right = 339.0
+offset_bottom = 239.0
+theme = ExtResource("2_h6iwt")
+text = "DEFEND!"
+icon = ExtResource("2_gg2ru")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true

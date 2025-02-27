@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c40yap22skpv8"]
 
 [ext_resource type="Texture2D" uid="uid://buhgvi205sh7i" path="res://art/swords/ShockedDagger/ShockedDagger.png" id="1_5rgiw"]
-[ext_resource type="Script" path="res://resources/sword/swordType/Wood_Sword.gd" id="1_kb532"]
+[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_myh6q"]
 [ext_resource type="Texture2D" uid="uid://c2qyfrwoq8djy" path="res://art/swords/ShockedDagger/ShockedDaggerSwing.png" id="2_sieos"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="4_bs43v"]
 [ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="5_r6pfy"]
@@ -41,7 +41,11 @@ _data = {
 }
 
 [node name="ShockedDagger" type="Node2D"]
-script = ExtResource("1_kb532")
+script = ExtResource("1_myh6q")
+sword_name = "Shocked Dagger"
+attack_bonus = 9000
+special_effect = "stun"
+effect_value = 30.0
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.825, 0.825)

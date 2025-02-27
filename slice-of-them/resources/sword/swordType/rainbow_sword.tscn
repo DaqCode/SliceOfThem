@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cj4gfurud4wh5"]
 
 [ext_resource type="Texture2D" uid="uid://nyny55fnm0q8" path="res://art/swords/RainbowSword/RainbowSword.png" id="1_dgflm"]
-[ext_resource type="Script" path="res://resources/sword/swordType/Wood_Sword.gd" id="1_kovpr"]
+[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_ro3uk"]
 [ext_resource type="Texture2D" uid="uid://wuplpj7euire" path="res://art/swords/RainbowSword/RainbowSwordSwing.png" id="2_njomi"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="3_5bcrp"]
 [ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="4_y3pne"]
@@ -79,7 +79,12 @@ _data = {
 }
 
 [node name="RainbowSword" type="Node2D"]
-script = ExtResource("1_kovpr")
+script = ExtResource("1_ro3uk")
+sword_name = "Rainbow Sword"
+attack_bonus = 1000
+defense_bonus = 100
+agility_bonus = 100
+crit_bonus = 100
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.9, 0.9)
