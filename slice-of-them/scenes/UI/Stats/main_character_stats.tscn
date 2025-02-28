@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwddmjgv0766x"]
+[gd_scene load_steps=6 format=3 uid="uid://dwddmjgv0766x"]
 
 [ext_resource type="Script" path="res://main_character_stats.gd" id="1_p70dg"]
 [ext_resource type="Texture2D" uid="uid://c108d5wyjojp1" path="res://icon.svg" id="2_nqswt"]
+[ext_resource type="Theme" uid="uid://carm5ka8me2pc" path="res://resources/Textures/Objects/ItemButton.tres" id="3_64fdn"]
+[ext_resource type="Texture2D" uid="uid://cld44matr7xjm" path="res://art/skills/PoisonBottle.png" id="3_i7hgh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slfnh"]
+bg_color = Color(0, 0.592599, 0.19755, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.984314, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0, 0.501961, 0, 0.772549)
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+anti_aliasing = false
 
 [node name="MainCharacterStats" type="Control"]
 layout_mode = 3
@@ -143,6 +161,11 @@ columns = 5
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_slfnh")
+icon = ExtResource("3_i7hgh")
+icon_alignment = 1
+expand_icon = true
 
 [node name="DizzyingSand" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
@@ -174,17 +197,17 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Refill" type="Button" parent="StatContainer/CharSkills/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="FISH" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StaerieSmash" type="Button" parent="StatContainer/CharSkills/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Button10" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -261,21 +284,33 @@ offset_right = -33.0
 offset_bottom = 617.0
 grow_horizontal = 0
 
-[node name="Label" type="Label" parent="SkillInventory2"]
+[node name="SkillTooltipPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -111.5
-offset_top = -112.5
-offset_right = 111.5
-offset_bottom = 112.5
+offset_left = 278.0
+offset_top = 18.5
+offset_right = 535.0
+offset_bottom = 284.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "This is for the skill stuff. 
-Shows description of what they do."
+
+[node name="TooltipLabel" type="Label" parent="SkillTooltipPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.5
+offset_right = -6.0
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="mouse_entered" from="StatContainer/CharStats/5StatsContain/Health" to="." method="_on_health_mouse_entered"]

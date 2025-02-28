@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cnjebjkxqijf8"]
 
-[ext_resource type="Script" path="res://scenes/characters/mainCharacter/son_heat.gd" id="1_aiad2"]
+[ext_resource type="Script" path="res://scenes/area/credits/son_heat.gd" id="1_aiad2"]
 [ext_resource type="PackedScene" uid="uid://r1swp42jfqwa" path="res://resources/sword/swordType/iron_sword.tscn" id="2_j2mj3"]
 [ext_resource type="PackedScene" uid="uid://bga24bcuyc2dq" path="res://resources/sword/swordType/bronze_sword.tscn" id="3_evgrt"]
 [ext_resource type="PackedScene" uid="uid://ueoulx8dpkno" path="res://resources/sword/swordType/wooden_sword.tscn" id="3_s84ju"]
@@ -39,33 +39,33 @@ position = Vector2(408, 402)
 position = Vector2(581, 402)
 
 [node name="DiamondSword" parent="SwordShow" instance=ExtResource("3_uo53s")]
-position = Vector2(761, 402)
+position = Vector2(772, 391)
 
 [node name="VampireBlade" parent="SwordShow" instance=ExtResource("7_7y1db")]
-position = Vector2(1054, 402)
+position = Vector2(1020, 417)
 
 [node name="ShiverSword" parent="SwordShow" instance=ExtResource("8_11p6g")]
-position = Vector2(1335, 402)
+position = Vector2(1289, 405)
 
 [node name="DoubleShadowSpear" parent="SwordShow" instance=ExtResource("8_t0bkr")]
-position = Vector2(1551, 402)
+position = Vector2(1511, 415)
 crit_bonus = 0
 special_effect = "poison"
 
 [node name="VoidsCleaver" parent="SwordShow" instance=ExtResource("9_p3wrq")]
-position = Vector2(1740, 402)
+position = Vector2(1714, 408)
 
 [node name="CrystalizedSword" parent="SwordShow" instance=ExtResource("10_eovys")]
-position = Vector2(1992, 402)
+position = Vector2(1952, 406)
 
 [node name="ShockedDagger" parent="SwordShow" instance=ExtResource("11_bku2d")]
-position = Vector2(2220, 310)
+position = Vector2(2180, 293)
 
 [node name="RainbowSword" parent="SwordShow" instance=ExtResource("11_m5gav")]
-position = Vector2(2438, 314)
+position = Vector2(2396, 307)
 
 [node name="StaeriesLastHope" parent="SwordShow" instance=ExtResource("12_aay6g")]
-position = Vector2(2688, 299)
+position = Vector2(2658, 288)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3
