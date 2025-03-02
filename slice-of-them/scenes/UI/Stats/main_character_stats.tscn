@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwddmjgv0766x"]
+[gd_scene load_steps=12 format=3 uid="uid://dwddmjgv0766x"]
 
 [ext_resource type="Script" path="res://main_character_stats.gd" id="1_p70dg"]
 [ext_resource type="Texture2D" uid="uid://c108d5wyjojp1" path="res://icon.svg" id="2_nqswt"]
 [ext_resource type="Theme" uid="uid://carm5ka8me2pc" path="res://resources/Textures/Objects/ItemButton.tres" id="3_64fdn"]
 [ext_resource type="Texture2D" uid="uid://cld44matr7xjm" path="res://art/skills/PoisonBottle.png" id="3_i7hgh"]
+[ext_resource type="Texture2D" uid="uid://bd7mc53sn3yp3" path="res://art/skills/Sand.png" id="5_d0nbj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slfnh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olh3l"]
 bg_color = Color(0, 0.592599, 0.19755, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0.984314, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.440336, 0, 1)
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
@@ -19,6 +20,74 @@ corner_radius_bottom_left = 25
 shadow_color = Color(0, 0.501961, 0, 0.772549)
 shadow_size = 1
 shadow_offset = Vector2(2, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slfnh"]
+bg_color = Color(0, 0.592599, 0.19755, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.440336, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0, 0.501961, 0, 0.772549)
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydbje"]
+bg_color = Color(1, 0.784674, 0.748988, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.94884, 0.519248, 1.92523e-07, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17gbl"]
+bg_color = Color(1, 0.784674, 0.748988, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.94884, 0.519248, 1.92523e-07, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xum0h"]
+bg_color = Color(1, 0.784674, 0.748988, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.94884, 0.519248, 1.92523e-07, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ns510"]
+bg_color = Color(1, 0.784674, 0.748988, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.94884, 0.519248, 1.92523e-07, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 anti_aliasing = false
 
 [node name="MainCharacterStats" type="Control"]
@@ -162,6 +231,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_olh3l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_slfnh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_slfnh")
 icon = ExtResource("3_i7hgh")
 icon_alignment = 1
@@ -171,46 +242,109 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydbje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17gbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xum0h")
+icon = ExtResource("5_d0nbj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="BottleOfWind" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydbje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17gbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xum0h")
+icon = ExtResource("5_d0nbj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="BoxOfSpikes" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydbje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17gbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xum0h")
+icon = ExtResource("5_d0nbj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="GlaciorSmoke" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydbje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17gbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xum0h")
+icon = ExtResource("5_d0nbj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="ClusterSharpener" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydbje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17gbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ns510")
+icon = ExtResource("5_d0nbj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="LightningSmite" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydbje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17gbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xum0h")
+icon = ExtResource("5_d0nbj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Refill" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydbje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17gbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xum0h")
+icon = ExtResource("5_d0nbj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="FISH" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydbje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17gbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xum0h")
+icon = ExtResource("5_d0nbj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="StaerieSmash" type="Button" parent="StatContainer/CharSkills/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_64fdn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ydbje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17gbl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xum0h")
+icon = ExtResource("5_d0nbj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="CharNumStats" type="Panel" parent="StatContainer"]
 layout_mode = 2
