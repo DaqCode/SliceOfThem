@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c40yap22skpv8"]
 
 [ext_resource type="Texture2D" uid="uid://buhgvi205sh7i" path="res://art/swords/ShockedDagger/ShockedDagger.png" id="1_5rgiw"]
-[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_myh6q"]
+[ext_resource type="Script" uid="uid://3yuhgmrn4e01" path="res://resources/sword/BaseSword.gd" id="1_myh6q"]
 [ext_resource type="Texture2D" uid="uid://c2qyfrwoq8djy" path="res://art/swords/ShockedDagger/ShockedDaggerSwing.png" id="2_sieos"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="4_bs43v"]
 [ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="5_r6pfy"]
@@ -37,7 +37,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyew8"]
 _data = {
-"RESET": SubResource("Animation_vqhhf")
+&"RESET": SubResource("Animation_vqhhf")
 }
 
 [node name="ShockedDagger" type="Node2D"]

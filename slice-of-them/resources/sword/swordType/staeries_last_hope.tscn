@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dteydf0cb041l"]
 
-[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_73n7k"]
+[ext_resource type="Script" uid="uid://3yuhgmrn4e01" path="res://resources/sword/BaseSword.gd" id="1_73n7k"]
 [ext_resource type="Texture2D" uid="uid://b51ha53bnks2g" path="res://art/swords/StaerieLastHope/StaerieLastHope.png" id="1_ukv1w"]
 [ext_resource type="Texture2D" uid="uid://bmtroehra30y4" path="res://art/swords/StaerieLastHope/StaerieLastHopeSwing.png" id="2_4uo5k"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="3_qadha"]
@@ -67,7 +67,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyew8"]
 _data = {
-"RESET": SubResource("Animation_vqhhf")
+&"RESET": SubResource("Animation_vqhhf")
 }
 
 [node name="StaeriesLastHope" type="Node2D"]

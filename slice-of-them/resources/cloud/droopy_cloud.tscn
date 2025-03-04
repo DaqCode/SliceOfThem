@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvwaypdfwjk6c"]
 
-[ext_resource type="Script" path="res://resources/clouds/BaseCloud.gd" id="1_af0el"]
+[ext_resource type="Script" uid="uid://rqkuqmn7otm5" path="res://resources/clouds/BaseCloud.gd" id="1_af0el"]
 [ext_resource type="Texture2D" uid="uid://cox270u5qbwtd" path="res://art/clouds/DroopyCloud.png" id="1_dy6cp"]
 [ext_resource type="Animation" uid="uid://cafdnnal5r7uj" path="res://aniations/cloudAnimations/Float.res" id="2_w60bw"]
 
@@ -17,7 +17,7 @@ animations = [{
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kt6fm"]
 _data = {
-"Float": ExtResource("2_w60bw")
+&"Float": ExtResource("2_w60bw")
 }
 
 [node name="DroopyCloud" type="Node2D"]
@@ -32,6 +32,6 @@ animation = &"Cloud"
 
 [node name="AnimationControl" type="AnimationPlayer" parent="."]
 libraries = {
-"CloudAnimations": SubResource("AnimationLibrary_kt6fm")
+&"CloudAnimations": SubResource("AnimationLibrary_kt6fm")
 }
 autoplay = "CloudAnimations/Float"

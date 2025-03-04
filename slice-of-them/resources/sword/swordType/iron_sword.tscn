@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://r1swp42jfqwa"]
 
 [ext_resource type="Texture2D" uid="uid://i7o3vyreldr6" path="res://art/swords/IronSword/IronSword.png" id="1_0v3h5"]
-[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_d38ul"]
+[ext_resource type="Script" uid="uid://3yuhgmrn4e01" path="res://resources/sword/BaseSword.gd" id="1_d38ul"]
 [ext_resource type="Texture2D" uid="uid://cohikgg3pqt7x" path="res://art/swords/IronSword/IronSwordSwing.png" id="2_ixoqs"]
 [ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="3_yux6k"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="4_j6my7"]
@@ -37,7 +37,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyew8"]
 _data = {
-"RESET": SubResource("Animation_vqhhf")
+&"RESET": SubResource("Animation_vqhhf")
 }
 
 [node name="IronSword" type="Node2D"]

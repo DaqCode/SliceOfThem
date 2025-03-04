@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cgextcrb6k8yp"]
 
 [ext_resource type="Texture2D" uid="uid://bqnqfkpxk4nnl" path="res://art/swords/CrystalizedSword/CrystalSword.png" id="1_7tq25"]
-[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_h5js4"]
+[ext_resource type="Script" uid="uid://3yuhgmrn4e01" path="res://resources/sword/BaseSword.gd" id="1_h5js4"]
 [ext_resource type="Texture2D" uid="uid://cqywl8n4s31ko" path="res://art/swords/CrystalizedSword/CrystalSwordSwing.png" id="2_i4kkc"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="3_p2wfm"]
 [ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="4_hxcqo"]
@@ -37,7 +37,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyew8"]
 _data = {
-"RESET": SubResource("Animation_vqhhf")
+&"RESET": SubResource("Animation_vqhhf")
 }
 
 [node name="CrystalizedSword" type="Node2D"]

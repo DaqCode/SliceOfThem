@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5jvq275nqo6c"]
 
-[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_bf67d"]
+[ext_resource type="Script" uid="uid://3yuhgmrn4e01" path="res://resources/sword/BaseSword.gd" id="1_bf67d"]
 [ext_resource type="Texture2D" uid="uid://cysjjkdqh5yy5" path="res://art/swords/DoubleShadowSpear/ShadowSides.png" id="1_ydcv4"]
 [ext_resource type="Texture2D" uid="uid://x88ql81be7gy" path="res://art/swords/DoubleShadowSpear/ShadowSidesSwing.png" id="2_i34qv"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="3_3lbud"]
@@ -37,7 +37,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyew8"]
 _data = {
-"RESET": SubResource("Animation_vqhhf")
+&"RESET": SubResource("Animation_vqhhf")
 }
 
 [node name="DoubleShadowSpear" type="Node2D"]

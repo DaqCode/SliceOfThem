@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bga24bcuyc2dq"]
 
-[ext_resource type="Script" path="res://resources/sword/BaseSword.gd" id="1_j43le"]
+[ext_resource type="Script" uid="uid://3yuhgmrn4e01" path="res://resources/sword/BaseSword.gd" id="1_j43le"]
 [ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="2_6pmrm"]
 [ext_resource type="Texture2D" uid="uid://c54r1w6egdsvj" path="res://art/swords/BronzeSword/BronzeSwordSwing.png" id="3_nps5l"]
 [ext_resource type="AnimationLibrary" uid="uid://4ctkk3kegv3d" path="res://aniations/swordAnimations/SwordAnimation.res" id="4_6pofk"]
@@ -36,7 +36,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyew8"]
 _data = {
-"RESET": SubResource("Animation_vqhhf")
+&"RESET": SubResource("Animation_vqhhf")
 }
 
 [node name="BronzeSword" type="Node2D"]
