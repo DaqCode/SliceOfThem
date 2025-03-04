@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalPlayerStats="*res://global/globalStats.gd"
+GlobalPlayerSkills="*res://global/globalSkills.gd"
 
 [display]
 

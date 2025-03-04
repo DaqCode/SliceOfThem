@@ -52,10 +52,10 @@ expand_icon = true
 
 [node name="Training" type="Button" parent="."]
 layout_mode = 0
-offset_left = 721.0
-offset_top = 372.0
-offset_right = 831.0
-offset_bottom = 470.0
+offset_left = 713.0
+offset_top = 397.0
+offset_right = 823.0
+offset_bottom = 495.0
 theme = ExtResource("2_h6iwt")
 text = "Training
 "
@@ -67,9 +67,9 @@ expand_icon = true
 [node name="Credits" type="Button" parent="."]
 layout_mode = 0
 offset_left = 505.0
-offset_top = 86.0
+offset_top = 48.0
 offset_right = 615.0
-offset_bottom = 184.0
+offset_bottom = 146.0
 theme = ExtResource("2_h6iwt")
 text = "Library"
 icon = ExtResource("2_gg2ru")
