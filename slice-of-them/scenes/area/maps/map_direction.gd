@@ -16,6 +16,7 @@ func _ready() -> void:
 	# Library
 	$Credits.connect("mouse_entered", Callable(self, "_on_LibraryButton_mouse_entered"))
 	$Credits.connect("mouse_exited", Callable(self, "_on_LibraryButton_mouse_exited"))
+	$Credits.connect("pressed", Callable(self, "_on_LibraryButton_clicked"))
 
 	# Blacksmith
 	$Blacksmith.connect("mouse_entered", Callable(self, "_on_BlacksmithButton_mouse_entered"))
@@ -25,6 +26,10 @@ func _ready() -> void:
 	$Training.connect("mouse_entered", Callable(self, "_on_TrainingButton_mouse_entered"))
 	$Training.connect("mouse_exited", Callable(self, "_on_TrainingButton_mouse_exited"))
 
+	# Bridge
+	$Bridge.connect("mouse_entered", Callable(self, "_on_BridgeButton_mouse_entered"))
+	$Bridge.connect("mouse_exited", Callable(self, "_on_BridgeButton_mouse_exited"))
+	$Bridge.connect("pressed", Callable(self, "_on_BridgeButton_clicked"))
 
 # Inventory Button
 func _on_InventoryButton_mouse_entered() -> void:
@@ -51,6 +56,8 @@ func _on_LibraryButton_mouse_entered() -> void:
 func _on_LibraryButton_mouse_exited() -> void:
 	$Credits.theme = THEME_NORMAL
 
+func _on_LibraryButton_clicked() -> void:
+	get_tree().change_scene_to_file("res://scenes/area/credits/son_heat.tscn")
 
 # Blacksmith Button
 func _on_BlacksmithButton_mouse_entered() -> void:
@@ -59,10 +66,19 @@ func _on_BlacksmithButton_mouse_entered() -> void:
 func _on_BlacksmithButton_mouse_exited() -> void:
 	$Blacksmith.theme = THEME_NORMAL
 
-
 # Training Button
 func _on_TrainingButton_mouse_entered() -> void:
 	$Training.theme = THEME_HOVER
 
 func _on_TrainingButton_mouse_exited() -> void:
 	$Training.theme = THEME_NORMAL
+
+# Bridge Button
+func _on_BridgeButton_mouse_entered() -> void:
+	$Bridge.theme = THEME_HOVER
+
+func _on_BridgeButton_mouse_exited() -> void:
+	$Bridge.theme = THEME_NORMAL
+
+func _on_BridgeButton_clicked() -> void:
+	pass

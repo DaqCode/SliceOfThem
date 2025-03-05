@@ -1,0 +1,134 @@
+[gd_scene load_steps=19 format=3 uid="uid://dqo0rt1qi4rw4"]
+
+[ext_resource type="Texture2D" uid="uid://23fafmj4wouq" path="res://aniations/Staerie/5_3_1_frame0000.png.adcc5e17-1602-408c-92cb-348cdca45925.png" id="1_40ifw"]
+[ext_resource type="Script" uid="uid://cr1nibu7pbyy5" path="res://scenes/area/bridgeRepair/bridge.gd" id="1_hw5fe"]
+[ext_resource type="Texture2D" uid="uid://btroincy6dpwb" path="res://aniations/Staerie/5_4_1_frame0001.png.d69524fe-78ff-49e9-87e9-deae69cbccdd.png" id="2_hw5fe"]
+[ext_resource type="Texture2D" uid="uid://bjeclft2itec5" path="res://art/background/bridgeProgress/BridgeCOMPLETE.png" id="2_ko0iw"]
+[ext_resource type="Texture2D" uid="uid://cnleyvl0ob3al" path="res://aniations/Staerie/5_5_1_frame0002.png.8de977ac-622a-4659-9ee5-f33e48e11940.png" id="3_ko0iw"]
+[ext_resource type="Texture2D" uid="uid://bdhclla572cr5" path="res://aniations/Staerie/4_1_1_frame0005.png.537db781-afeb-4f0b-8b98-d5964b9f0b68.png" id="4_a42x8"]
+[ext_resource type="Texture2D" uid="uid://cr0rrga7d8t5l" path="res://aniations/Staerie/4_2_1_frame0006.png.ca04647c-b362-4962-803f-cc5658e21e73.png" id="5_nqo0m"]
+[ext_resource type="Texture2D" uid="uid://bu5g0cy8lv811" path="res://aniations/Staerie/4_3_1_frame0007.png.4bf15290-5c26-4df9-ba22-a15c97ad3473.png" id="6_vkvbt"]
+[ext_resource type="Texture2D" uid="uid://uyc0mygfjai3" path="res://aniations/Staerie/4_4_1_frame0008.png.677ed477-4bc1-4a03-ad94-d127768b9f35.png" id="7_una7p"]
+[ext_resource type="Texture2D" uid="uid://cu0t8xag4vqyo" path="res://aniations/Staerie/4_5_1_frame0009.png.dbb33894-3f4e-4a83-ad18-9fc580c6f721.png" id="8_yo0ri"]
+[ext_resource type="Texture2D" uid="uid://canb8chv7o0nr" path="res://aniations/Staerie/3_2_1_frame0010.png.5f728b3d-abec-430c-b5be-fbb4ef5bf9c7.png" id="9_fqx18"]
+[ext_resource type="Texture2D" uid="uid://bj3p27rflxhwl" path="res://aniations/Staerie/3_3_1_frame0011.png.14c2e7f9-3334-45e1-8272-71dcf6ca47c7.png" id="10_t08lv"]
+[ext_resource type="Texture2D" uid="uid://i3fdxquhb0o4" path="res://aniations/Staerie/3_4_1_frame0012.png.5ac8efd0-5a11-4930-9f26-1ded4d86e241.png" id="11_7twxt"]
+[ext_resource type="AudioStream" uid="uid://4btym4wlf7yl" path="res://art/sounds/music/Nature Relaxing Sounds _ 5 Minutes of Birds, Trees, and Wind [ ezmp3.cc ].mp3" id="14_a42x8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1a1ed"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_40ifw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hw5fe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ko0iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a42x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nqo0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vkvbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_una7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yo0ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fqx18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t08lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7twxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_40ifw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="Animation" id="Animation_5n80u"]
+resource_name = "StaerieIdle"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaerieBob:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 5.93333, 9, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(992, 540), Vector2(992, 498), Vector2(992, 540), Vector2(992, 560), Vector2(992, 540)]
+}
+
+[sub_resource type="Animation" id="Animation_p5yuk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaerieBob:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(992, 540)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mflf0"]
+_data = {
+&"RESET": SubResource("Animation_p5yuk"),
+&"StaerieIdle": SubResource("Animation_5n80u")
+}
+
+[node name="Bridge" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hw5fe")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ko0iw")
+
+[node name="StaerieBob" type="AnimatedSprite2D" parent="."]
+position = Vector2(992, 540)
+scale = Vector2(0.23, 0.23)
+sprite_frames = SubResource("SpriteFrames_1a1ed")
+frame = 11
+frame_progress = 1.0
+
+[node name="IdleBoy" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mflf0")
+}
+autoplay = "StaerieIdle"
+
+[node name="MusicYep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_a42x8")
+volume_db = -7.5
+autoplay = true

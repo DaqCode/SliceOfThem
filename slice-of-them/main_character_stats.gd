@@ -96,9 +96,9 @@ func _ready() -> void:
 		var btn = grid_container.get_node(node_name)
 		if btn:
 			# Connect mouse_entered and mouse_exited signals for tooltip display.
+			# Connect the pressed signal for upgrading the skill.
 			btn.connect("mouse_entered", Callable(self, "_on_skill_button_mouse_entered").bind(skill_name))
 			btn.connect("mouse_exited", Callable(self, "_on_skill_button_mouse_exited"))
-			# Connect the pressed signal for upgrading the skill.
 			btn.connect("pressed", Callable(self, "_on_skill_button_pressed").bind(skill_name))
 	
 	# Hide the tooltip panel at startup.

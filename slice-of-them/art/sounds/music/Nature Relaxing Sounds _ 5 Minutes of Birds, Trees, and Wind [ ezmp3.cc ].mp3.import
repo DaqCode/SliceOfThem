@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4btym4wlf7yl"
+path="res://.godot/imported/Nature Relaxing Sounds _ 5 Minutes of Birds, Trees, and Wind [ ezmp3.cc ].mp3-3ef8185f12bf84fac48c477e467e33b4.mp3str"
+
+[deps]
+
+source_file="res://art/sounds/music/Nature Relaxing Sounds _ 5 Minutes of Birds, Trees, and Wind [ ezmp3.cc ].mp3"
+dest_files=["res://.godot/imported/Nature Relaxing Sounds _ 5 Minutes of Birds, Trees, and Wind [ ezmp3.cc ].mp3-3ef8185f12bf84fac48c477e467e33b4.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

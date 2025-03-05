@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnjebjkxqijf8"]
+[gd_scene load_steps=16 format=3 uid="uid://cnjebjkxqijf8"]
 
 [ext_resource type="Script" uid="uid://cxujluvjh4jd4" path="res://scenes/area/credits/son_heat.gd" id="1_aiad2"]
 [ext_resource type="PackedScene" uid="uid://r1swp42jfqwa" path="res://resources/sword/swordType/iron_sword.tscn" id="2_j2mj3"]
 [ext_resource type="PackedScene" uid="uid://bga24bcuyc2dq" path="res://resources/sword/swordType/bronze_sword.tscn" id="3_evgrt"]
+[ext_resource type="Script" uid="uid://dpk5ucdocjkl7" path="res://resources/sword/swordType/Wood_Sword.gd" id="3_hs4n4"]
 [ext_resource type="PackedScene" uid="uid://ueoulx8dpkno" path="res://resources/sword/swordType/wooden_sword.tscn" id="3_s84ju"]
 [ext_resource type="PackedScene" uid="uid://1r2mskismxxj" path="res://resources/sword/swordType/diamond_sword.tscn" id="3_uo53s"]
 [ext_resource type="PackedScene" uid="uid://pb0qsj7ilxc7" path="res://resources/sword/swordType/vampire_blade.tscn" id="7_7y1db"]
@@ -30,42 +31,96 @@ offset_bottom = 619.0
 alignment = 1
 
 [node name="WoodenSword" parent="SwordShow" instance=ExtResource("3_s84ju")]
-position = Vector2(191, 390)
+position = Vector2(177, 479)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
 
 [node name="BronzeSword" parent="SwordShow" instance=ExtResource("3_evgrt")]
 position = Vector2(408, 402)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+defense_bonus = 0
 
 [node name="IronSword" parent="SwordShow" instance=ExtResource("2_j2mj3")]
 position = Vector2(581, 402)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+defense_bonus = 0
 
 [node name="DiamondSword" parent="SwordShow" instance=ExtResource("3_uo53s")]
 position = Vector2(772, 391)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+defense_bonus = 0
 
 [node name="VampireBlade" parent="SwordShow" instance=ExtResource("7_7y1db")]
 position = Vector2(1020, 417)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+special_effect = ""
 
 [node name="ShiverSword" parent="SwordShow" instance=ExtResource("8_11p6g")]
 position = Vector2(1289, 405)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+defense_bonus = 0
+agility_bonus = 0
 
 [node name="DoubleShadowSpear" parent="SwordShow" instance=ExtResource("8_t0bkr")]
 position = Vector2(1511, 415)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+defense_bonus = 0
 crit_bonus = 0
-special_effect = "poison"
 
 [node name="VoidsCleaver" parent="SwordShow" instance=ExtResource("9_p3wrq")]
 position = Vector2(1714, 408)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+defense_bonus = 0
+special_effect = ""
 
 [node name="CrystalizedSword" parent="SwordShow" instance=ExtResource("10_eovys")]
 position = Vector2(1952, 406)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+defense_bonus = 0
+special_effect = ""
 
 [node name="ShockedDagger" parent="SwordShow" instance=ExtResource("11_bku2d")]
-position = Vector2(2180, 293)
+position = Vector2(2180, 405)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+special_effect = ""
+effect_value = 0.0
 
 [node name="RainbowSword" parent="SwordShow" instance=ExtResource("11_m5gav")]
-position = Vector2(2396, 307)
+position = Vector2(2396, 419)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+defense_bonus = 0
+agility_bonus = 0
+crit_bonus = 0
 
 [node name="StaeriesLastHope" parent="SwordShow" instance=ExtResource("12_aay6g")]
-position = Vector2(2658, 288)
+position = Vector2(2658, 400)
+script = ExtResource("3_hs4n4")
+sword_name = ""
+attack_bonus = 0
+defense_bonus = 0
+agility_bonus = 0
+crit_bonus = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3

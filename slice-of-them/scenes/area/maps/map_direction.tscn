@@ -37,6 +37,19 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="Bridge" type="Button" parent="."]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 223.0
+offset_right = 692.0
+offset_bottom = 321.0
+theme = ExtResource("2_h6iwt")
+text = "Bridge"
+icon = ExtResource("2_gg2ru")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
 [node name="Blacksmith" type="Button" parent="."]
 layout_mode = 0
 offset_left = 877.0
