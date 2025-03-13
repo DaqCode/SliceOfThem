@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dqo0rt1qi4rw4"]
+[gd_scene load_steps=20 format=3 uid="uid://dqo0rt1qi4rw4"]
 
 [ext_resource type="Texture2D" uid="uid://23fafmj4wouq" path="res://aniations/Staerie/5_3_1_frame0000.png.adcc5e17-1602-408c-92cb-348cdca45925.png" id="1_40ifw"]
 [ext_resource type="Script" uid="uid://cr1nibu7pbyy5" path="res://scenes/area/bridgeRepair/bridge.gd" id="1_hw5fe"]
+[ext_resource type="Texture2D" uid="uid://cuvadijlgpdd2" path="res://art/background/bridgeProgress/BridgeStage1.png" id="2_a42x8"]
 [ext_resource type="Texture2D" uid="uid://btroincy6dpwb" path="res://aniations/Staerie/5_4_1_frame0001.png.d69524fe-78ff-49e9-87e9-deae69cbccdd.png" id="2_hw5fe"]
-[ext_resource type="Texture2D" uid="uid://bjeclft2itec5" path="res://art/background/bridgeProgress/BridgeCOMPLETE.png" id="2_ko0iw"]
 [ext_resource type="Texture2D" uid="uid://cnleyvl0ob3al" path="res://aniations/Staerie/5_5_1_frame0002.png.8de977ac-622a-4659-9ee5-f33e48e11940.png" id="3_ko0iw"]
 [ext_resource type="Texture2D" uid="uid://bdhclla572cr5" path="res://aniations/Staerie/4_1_1_frame0005.png.537db781-afeb-4f0b-8b98-d5964b9f0b68.png" id="4_a42x8"]
 [ext_resource type="Texture2D" uid="uid://cr0rrga7d8t5l" path="res://aniations/Staerie/4_2_1_frame0006.png.ca04647c-b362-4962-803f-cc5658e21e73.png" id="5_nqo0m"]
@@ -59,6 +59,61 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="Animation" id="Animation_a42x8"]
+resource_name = "ChangePosition"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaerieBob:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.94, 2.31, 2.59754, 3.88, 5.11, 6.78, 9.99, 12.08, 12.1284, 14.85, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(992, 540), Vector2(992, 545), Vector2(992, -107), Vector2(992, -107), Vector2(544, -107), Vector2(293, 52), Vector2(293, 66), Vector2(293, 66), Vector2(293, 80), Vector2(293, -129), Vector2(955.488, -125), Vector2(992, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaerieBob:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.96667, 3.12, 12.14, 12.23),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.23, 0.23), Vector2(0.075, 0.075), Vector2(0.075, 0.075), Vector2(0.23, 0.23)]
+}
+
+[sub_resource type="Animation" id="Animation_p5yuk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaerieBob:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(992, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaerieBob:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.23, 0.23)]
+}
+
 [sub_resource type="Animation" id="Animation_5n80u"]
 resource_name = "StaerieIdle"
 length = 12.0
@@ -76,23 +131,9 @@ tracks/0/keys = {
 "values": [Vector2(992, 540), Vector2(992, 498), Vector2(992, 540), Vector2(992, 560), Vector2(992, 540)]
 }
 
-[sub_resource type="Animation" id="Animation_p5yuk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("StaerieBob:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(992, 540)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mflf0"]
 _data = {
+&"ChangePosition": SubResource("Animation_a42x8"),
 &"RESET": SubResource("Animation_p5yuk"),
 &"StaerieIdle": SubResource("Animation_5n80u")
 }
@@ -106,14 +147,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hw5fe")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BridgeProgress" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ko0iw")
+texture = ExtResource("2_a42x8")
 
 [node name="StaerieBob" type="AnimatedSprite2D" parent="."]
 position = Vector2(992, 540)
@@ -132,3 +173,19 @@ autoplay = "StaerieIdle"
 stream = ExtResource("14_a42x8")
 volume_db = -7.5
 autoplay = true
+
+[node name="Upgrade" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -37.0
+offset_right = 77.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fix Bridge!"
+metadata/_edit_use_anchors_ = true

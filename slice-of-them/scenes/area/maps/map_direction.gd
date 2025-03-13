@@ -41,6 +41,7 @@ func _on_InventoryButton_mouse_exited() -> void:
 func _on_InventoryButton_clicked() -> void:
 	get_tree().change_scene_to_file("res://scenes/UI/Stats/main_character_stats.tscn")
 
+
 # Defend Button
 func _on_DefendButton_mouse_entered() -> void:
 	$Fight.theme = THEME_HOVER
@@ -59,6 +60,7 @@ func _on_LibraryButton_mouse_exited() -> void:
 func _on_LibraryButton_clicked() -> void:
 	get_tree().change_scene_to_file("res://scenes/area/credits/son_heat.tscn")
 
+
 # Blacksmith Button
 func _on_BlacksmithButton_mouse_entered() -> void:
 	$Blacksmith.theme = THEME_HOVER
@@ -66,12 +68,14 @@ func _on_BlacksmithButton_mouse_entered() -> void:
 func _on_BlacksmithButton_mouse_exited() -> void:
 	$Blacksmith.theme = THEME_NORMAL
 
+
 # Training Button
 func _on_TrainingButton_mouse_entered() -> void:
 	$Training.theme = THEME_HOVER
 
 func _on_TrainingButton_mouse_exited() -> void:
 	$Training.theme = THEME_NORMAL
+
 
 # Bridge Button
 func _on_BridgeButton_mouse_entered() -> void:
@@ -81,4 +85,4 @@ func _on_BridgeButton_mouse_exited() -> void:
 	$Bridge.theme = THEME_NORMAL
 
 func _on_BridgeButton_clicked() -> void:
-	pass
+	get_tree().change_scene_to_file("res://scenes/area/bridgeRepair/bridge.tscn")

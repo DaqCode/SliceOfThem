@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjjtx24302mpi"]
+
+[ext_resource type="Script" uid="uid://drli7g8kouc5m" path="res://scenes/area/blacksmith/black_smith.gd" id="1_dn51w"]
+[ext_resource type="Texture2D" uid="uid://dcarh1c77c2ap" path="res://art/background/blacksmith/BlackSmithBud.png" id="2_lmo6l"]
+
+[node name="BlackSmith" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dn51w")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlacksmithBud" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = 3.0
+offset_right = -366.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lmo6l")
+
+[node name="UseItems" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = -271.0
+offset_right = 173.0
+offset_bottom = 271.0
+grow_vertical = 2
+
+[node name="HealPoion" type="Button" parent="UseItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Heal Potion"
+
+[node name="StrengthPotion" type="Button" parent="UseItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Strength potion"
+
+[node name="SpeedPotion" type="Button" parent="UseItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Speed Potion"
+
+[node name="RefreshPotion" type="Button" parent="UseItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Refresh potion"
+
+[node name="LuckPotion" type="Button" parent="UseItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Luck potion"
+
+[node name="DarknessPotion" type="Button" parent="UseItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Darkness potion"
+
+[node name="PrimaryItems" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 226.0
+offset_right = 1079.0
+offset_bottom = 431.0
+
+[node name="SwordPurchase" type="Button" parent="PrimaryItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Purchase Sword"
+
+[node name="CloudPurchase" type="Button" parent="PrimaryItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Purchase Cloud"

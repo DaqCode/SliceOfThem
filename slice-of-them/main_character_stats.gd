@@ -3,102 +3,111 @@ extends Control
 @onready var stat_change := $StatContainer/CharStats/Indicator/WhatStatChange
 @onready var stat_change_numerical := $StatContainer/CharNumStats/NumberStats
 
+# Preload your GoldenComplete indicator scene.
+var GoldenCompleteScene = preload("res://scenes/UI/Stats/completion_panel.tscn")
+
 # Dictionary for the tooltips.
 var skill_data = {
-    "Poison Bottle": {
-        "name": "Poison Bottle",
-        "description": "The last one. That was made without any instructions.",
-        "tooltip": "Deals 2.0% damage per turn.",
-        "use": "Lasts 3 turns, takes 6 turns to replenish."
-    },
-    "Dizzying Sand": {
-        "name": "Dizzying Sand",
-        "description": "Kind of dry, but it got into your eyes before. Harvested in the wilds.",
-        "tooltip": "Increases enemy damage taken by 25%.",
-        "use": "Lasts 1 turn, takes 6 turns to replenish."
-    },
-    "Bottle of Wind": {
-        "name": "Bottle of Wind",
-        "description": "It's unknown how the stars got this wind inside the bottle. The bottle is cold.",
-        "tooltip": "Guarantees dodge for 2 turns.",
-        "use": "Takes 9 turns to replenish."
-    },
-    "Box of spikes": {
-        "name": "Box of spikes",
-        "description": "You want some of me? You're going to get some of you instead, buster!",
-        "tooltip": "Enemy takes 20% of damage as recoil.",
-        "use": "Permanent until end of combat. One-time use."
-    },
-    "Glacior Smoke": {
-        "name": "Glacior Smoke",
-        "description": "You know it's cold. Then why is it hot? Icy hot? Also, what's a glacior?",
-        "tooltip": "Freeze multiplier: 150%, Burn: 5%.",
-        "use": "Freeze: 1 turn. Burn: Until death. One-time use."
-    },
-    "Cluster-Sharpener": {
-        "name": "Cluster-Sharpener",
-        "description": "What in the world were the inventors thinking when you could put a bomb on a stick!?",
-        "tooltip": "Next 5 attacks have 75% chance to explode for 1.5× damage.",
-        "use": "Lasts 5 turns. Takes 14 turns to replenish."
-    },
-    "Lightning Smite": {
-        "name": "Lightning Smite",
-        "description": "BY THE GODS MIGHT is the last thing heard by the one who wielded this object.",
-        "tooltip": "Deals 10000 base damage stunning for 2 turns.",
-        "use": "Takes 17 turns to replenish."
-    },
-    "Refill": {
-        "name": "Refill",
-        "description": "You take a sip from your trusty Staerie-created can of water (or pudding).",
-        "tooltip": "Heals between 40.0% and 60.0% of your health; grants an attack boost for 5 turns.",
-		#Heals 40%-60% of your health; grants an attack boost for 5 turns.
-        "use": "Takes 18 turns to refill."
-    },
-    "Fish": {
-        "name": "Fish",
-        "description": "It always works. It always works. It always works.",
-        "tooltip": "Summons a giant fish that heals for 80% of your health.",
-        "use": "Takes 20 turns to replenish."
-    },
-    "Staerie smash": {
-        "name": "Staerie smash",
-        "description": "… Wait, huh? You guys hear that? Oh dear god. HERE IT COMES!",
-        "tooltip": "Instakills non-boss enemies and grants a random wish.",
-        "use": "One-time use."
-    }
+	"Poison Bottle": {
+		"name": "Poison Bottle",
+		"description": "The last one. That was made without any instructions.",
+		"tooltip": "Deals 2.0% damage per turn.",
+		"use": "Lasts 3 turns, takes 6 turns to replenish."
+	},
+	"Dizzying Sand": {
+		"name": "Dizzying Sand",
+		"description": "Kind of dry, but it got into your eyes before. Harvested in the wilds.",
+		"tooltip": "Increases enemy damage taken by 25%.",
+		"use": "Lasts 1 turn, takes 6 turns to replenish."
+	},
+	"Bottle of Wind": {
+		"name": "Bottle of Wind",
+		"description": "It's unknown how the stars got this wind inside the bottle. The bottle is cold.",
+		"tooltip": "Guarantees dodge for 2 turns.",
+		"use": "Takes 9 turns to replenish."
+	},
+	"Box of spikes": {
+		"name": "Box of spikes",
+		"description": "You want some of me? You're going to get some of you instead, buster!",
+		"tooltip": "Enemy takes 20% of damage as recoil.",
+		"use": "Permanent until end of combat. One-time use."
+	},
+	"Glacior Smoke": {
+		"name": "Glacior Smoke",
+		"description": "You know it's cold. Then why is it hot? Icy hot? Also, what's a glacior?",
+		"tooltip": "Freeze multiplier: 150%, Burn: 5%.",
+		"use": "Freeze: 1 turn. Burn: Until death. One-time use."
+	},
+	"Cluster-Sharpener": {
+		"name": "Cluster-Sharpener",
+		"description": "What in the world were the inventors thinking when you could put a bomb on a stick!?",
+		"tooltip": "Next 5 attacks have 75% chance to explode for 1.5× damage.",
+		"use": "Lasts 5 turns. Takes 14 turns to replenish."
+	},
+	"Lightning Smite": {
+		"name": "Lightning Smite",
+		"description": "BY THE GODS MIGHT is the last thing heard by the one who wielded this object.",
+		"tooltip": "Deals 10000 base damage, stunning for 2 turns.",
+		"use": "Takes 17 turns to replenish."
+	},
+	"Refill": {
+		"name": "Refill",
+		"description": "You take a sip from your trusty Staerie-created can of water (or pudding).",
+		"tooltip": "Heals 40.0%-60.0% of your health; grants an attack boost for 5 turns.",
+		"use": "Takes 18 turns to refill."
+	},
+	"Fish": {
+		"name": "Fish",
+		"description": "It always works. It always works. It always works.",
+		"tooltip": "Summons a giant fish that heals for 80% of your health.",
+		"use": "Takes 20 turns to replenish."
+	},
+	"Staerie smash": {
+		"name": "Staerie smash",
+		"description": "… Wait, huh? You guys hear that? Oh dear god. HERE IT COMES!",
+		"tooltip": "Instakills non-boss enemies and grants a random wish.",
+		"use": "One-time use."
+	}
 }
 
+# Mapping of button node names to skill names.
+var skills_mapping = {
+	"PoisonBottle": "Poison Bottle",
+	"DizzyingSand": "Dizzying Sand",
+	"BottleOfWind": "Bottle of Wind",
+	"BoxOfSpikes": "Box of spikes",
+	"GlaciorSmoke": "Glacior Smoke",
+	"ClusterSharpener": "Cluster-Sharpener",
+	"LightningSmite": "Lightning Smite",
+	"Refill": "Refill",
+	"FISH": "Fish",
+	"StaerieSmash": "Staerie smash"
+}
+
+# Dictionary to store button nodes by skill name.
+var skill_buttons = {}
 
 func _ready() -> void:
 	# Connect the global stats signal to update the UI automatically.
 	GlobalPlayerStats.connect("stats_updated", Callable(self, "_change_number_values"))
-	
-	# Dictionary mapping the button node names to the skill names.
-	var skills = {
-		"PoisonBottle": "Poison Bottle",
-		"DizzyingSand": "Dizzying Sand",
-		"BottleOfWind": "Bottle of Wind",
-		"BoxOfSpikes": "Box of spikes",
-		"GlaciorSmoke": "Glacior Smoke",
-		"ClusterSharpener": "Cluster-Sharpener",
-		"LightningSmite": "Lightning Smite",
-		"Refill": "Refill",
-		"FISH": "Fish",
-		"StaerieSmash": "Staerie smash"
-	}
+	var exit = $Exit
+
+	exit.connect("pressed", Callable(self, "_on_exit_pressed"))
 	
 	# Get the GridContainer node.
 	var grid_container = $StatContainer/CharSkills/GridContainer
 	
 	# Loop over each skill entry and connect signals.
-	for node_name in skills.keys():
-		var skill_name = skills[node_name]
+	for node_name in skills_mapping.keys():
+		var skill_name = skills_mapping[node_name]
 		var btn = grid_container.get_node(node_name)
 		if btn:
-			# Connect mouse_entered and mouse_exited signals for tooltip display.
-			# Connect the pressed signal for upgrading the skill.
+			# Save the button in our dictionary for later reference.
+			skill_buttons[skill_name] = btn
+			# Connect mouse_entered and mouse_exited for tooltip display.
 			btn.connect("mouse_entered", Callable(self, "_on_skill_button_mouse_entered").bind(skill_name))
 			btn.connect("mouse_exited", Callable(self, "_on_skill_button_mouse_exited"))
+			# Connect pressed for upgrading the skill.
 			btn.connect("pressed", Callable(self, "_on_skill_button_pressed").bind(skill_name))
 	
 	# Hide the tooltip panel at startup.
@@ -157,9 +166,7 @@ func _change_number_values() -> void:
 	)
 
 # -- Skill Tooltip Functions --
-
 func _on_skill_button_mouse_entered(skill_name: String) -> void:
-	# Show the tooltip for the skill.
 	if skill_data.has(skill_name):
 		var info = skill_data[skill_name]
 		var display_text = "%s\n%s\n%s\n%s" % [
@@ -179,7 +186,7 @@ func _on_skill_button_pressed(skill_upgrade_name: String) -> void:
 	# Upgrade the skill in the global script.
 	GlobalPlayerSkills.upgrade_skill(skill_upgrade_name)
 	
-	# Update the base dictionary for this skill with the new upgrade values.
+	# Update the tooltip display based on the new upgrade values.
 	if skill_data.has(skill_upgrade_name):
 		var info = skill_data[skill_upgrade_name]
 		match skill_upgrade_name:
@@ -224,10 +231,8 @@ func _on_skill_button_pressed(skill_upgrade_name: String) -> void:
 					info["tooltip"] = "Locked."
 					info["use"] = ""
 			_:
-				# For skills with no extra logic, leave them unchanged.
 				pass
 		
-		# Build the display text with each element on a new line.
 		var display_text = "%s\n%s\n%s\n%s" % [
 			info["name"],
 			info["description"],
@@ -238,3 +243,18 @@ func _on_skill_button_pressed(skill_upgrade_name: String) -> void:
 		$SkillTooltipPanel.visible = true
 	
 	print("Upgraded skill: ", skill_upgrade_name)
+
+	
+	# -- If the skill is now maxed out (level 5), add a GoldenComplete indicator --
+	if (GlobalPlayerSkills.skills_upgrades[skill_upgrade_name] == 5 and skill_upgrade_name != "Staerie smash") or (skill_upgrade_name == "Staerie smash" and GlobalPlayerSkills.skills_upgrades[skill_upgrade_name] == 1):
+		if skill_buttons.has(skill_upgrade_name):
+			var btn = skill_buttons[skill_upgrade_name]
+			# Only add the indicator if it doesn't already exist.
+			if not btn.has_node("GoldenComplete"):
+				var golden = GoldenCompleteScene.instantiate()
+				golden.name = "GoldenComplete"
+				btn.add_child(golden)
+
+func _on_exit_pressed() -> void:
+	print(GlobalPlayerStats.coins)
+	get_tree().change_scene_to_file("res://scenes/area/maps/map_direction.tscn")
