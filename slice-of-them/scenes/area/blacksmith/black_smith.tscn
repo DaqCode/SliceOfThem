@@ -1,7 +1,176 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjjtx24302mpi"]
+[gd_scene load_steps=14 format=3 uid="uid://bjjtx24302mpi"]
 
 [ext_resource type="Script" uid="uid://drli7g8kouc5m" path="res://scenes/area/blacksmith/black_smith.gd" id="1_dn51w"]
+[ext_resource type="Texture2D" uid="uid://yx7gw0ihc1y8" path="res://art/background/blacksmith/BlacksmithBackground.png" id="2_f7ad2"]
 [ext_resource type="Texture2D" uid="uid://dcarh1c77c2ap" path="res://art/background/blacksmith/BlackSmithBud.png" id="2_lmo6l"]
+[ext_resource type="Texture2D" uid="uid://bfb44qgl5any3" path="res://art/asset/GizoHammer.png" id="4_gpcf2"]
+
+[sub_resource type="Gradient" id="Gradient_gpcf2"]
+offsets = PackedFloat32Array(0.604651, 0.996124)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e6hc8"]
+gradient = SubResource("Gradient_gpcf2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ur6wl"]
+particle_flag_disable_z = true
+angle_min = -360.0
+angle_max = 1.07288e-05
+direction = Vector3(194.25, -48.445, 0)
+initial_velocity_min = -500.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 98, 0)
+scale_min = 3.0
+scale_max = 4.0
+color = Color(1, 0.976807, 0.851563, 1)
+color_ramp = SubResource("GradientTexture1D_e6hc8")
+
+[sub_resource type="Gradient" id="Gradient_e6hc8"]
+offsets = PackedFloat32Array(0, 0.620155, 0.806202, 0.903101, 1)
+colors = PackedColorArray(1, 0.984375, 0, 1, 1, 0, 0, 1, 0.329412, 0, 0, 1, 0.839216, 0.760784, 0.760784, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ur6wl"]
+gradient = SubResource("Gradient_e6hc8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_awjlb"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(19.64, -18.64, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = 45.0
+angle_max = 90.0
+inherit_velocity_ratio = 0.5
+spread = 180.0
+initial_velocity_min = -167.7
+angular_velocity_min = -304.1
+angular_velocity_max = 93.91
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 0.0500001
+gravity = Vector3(0, -150, 0)
+damping_max = 1.442
+scale_min = 3.0
+scale_max = 4.0
+scale_over_velocity_min = 10.22
+scale_over_velocity_max = 79.14
+color_ramp = SubResource("GradientTexture1D_ur6wl")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Animation" id="Animation_8ty12"]
+resource_name = "SwingHammer"
+length = 25.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GizoHammer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3, 4.38, 5.33, 6.21, 6.91, 7.16, 7.25833, 8.94, 9.44, 10.71, 12.01, 12.84, 13.6333, 14.2332, 14.7234, 15.2185, 15.7534, 16.1492, 16.6034, 17.4734, 19.0333, 20.4291, 20.8667, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1047, 351), Vector2(1047, 325), Vector2(1047, 351), Vector2(1056, 303), Vector2(1056, 324), Vector2(1056, 307), Vector2(1056, 307), Vector2(973, 371), Vector2(973, 371), Vector2(1047, 351), Vector2(1047, 325), Vector2(1047, 325), Vector2(1047, 325), Vector2(1047, 325), Vector2(806, 542), Vector2(538, 572), Vector2(216, 467), Vector2(125, 309), Vector2(230, 127), Vector2(515, 109), Vector2(847, 156), Vector2(1124, 378), Vector2(1124, 378), Vector2(1154, 389), Vector2(1047, 351)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GizoHammer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.43, 5.33, 7.16, 7.25833, 8.94, 9.44, 13.0024, 13.6296, 17.4667, 19.0287, 20.5333, 21.3069, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 2.99673, 2.99673, -1.5708, -1.5708, 0.0, 0.340339, 0.340339, -62.8319, -62.1512, -62.1512, -62.1512, -62.8406]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Particles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7.05, 7.24746, 11.9156, 12.0156, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GizoHammer/HammerWEEEE:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 13.3667, 13.6667, 17.4493, 17.6135),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_nha4e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GizoHammer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1047, 351)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GizoHammer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.99673]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Particles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GizoHammer/HammerWEEEE:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ot1jq"]
+_data = {
+&"RESET": SubResource("Animation_nha4e"),
+&"SwingHammer": SubResource("Animation_8ty12")
+}
 
 [node name="BlackSmith" type="Control"]
 layout_mode = 3
@@ -13,12 +182,14 @@ grow_vertical = 2
 script = ExtResource("1_dn51w")
 
 [node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.900992, 0.83457, 0.999999, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_f7ad2")
 
 [node name="BlacksmithBud" type="TextureRect" parent="."]
 layout_mode = 1
@@ -38,10 +209,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 28.0
-offset_top = -271.0
-offset_right = 173.0
-offset_bottom = 271.0
+offset_left = 48.0
+offset_top = -145.0
+offset_right = 185.0
+offset_bottom = 107.0
 grow_vertical = 2
 
 [node name="HealPoion" type="Button" parent="UseItems"]
@@ -82,10 +253,10 @@ text = "Darkness potion"
 
 [node name="PrimaryItems" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 779.0
-offset_top = 226.0
-offset_right = 1079.0
-offset_bottom = 431.0
+offset_left = 797.0
+offset_top = 55.0
+offset_right = 1097.0
+offset_bottom = 260.0
 
 [node name="SwordPurchase" type="Button" parent="PrimaryItems"]
 layout_mode = 2
@@ -98,3 +269,39 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Purchase Cloud"
+
+[node name="GizoHammer" type="Sprite2D" parent="."]
+position = Vector2(1047, 351)
+rotation = 2.99673
+scale = Vector2(0.365, 0.365)
+texture = ExtResource("4_gpcf2")
+
+[node name="HammerWEEEE" type="GPUParticles2D" parent="GizoHammer"]
+position = Vector2(-8.21918, -115.068)
+emitting = false
+amount = 90
+preprocess = 0.4
+explosiveness = 0.25
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ur6wl")
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+position = Vector2(921, 427)
+emitting = false
+amount = 100
+lifetime = 6.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+fixed_fps = 60
+visibility_rect = Rect2(-25, -10, 50, 10)
+local_coords = true
+trail_lifetime = 0.01
+trail_section_subdivisions = 50
+process_material = SubResource("ParticleProcessMaterial_awjlb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ot1jq")
+}
+autoplay = "SwingHammer"

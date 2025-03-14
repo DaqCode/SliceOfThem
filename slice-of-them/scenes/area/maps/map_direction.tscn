@@ -15,7 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_4malm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.903598, 0.903598, 0.903598, 1)
+modulate = Color(0.860369, 0.860369, 0.860368, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
