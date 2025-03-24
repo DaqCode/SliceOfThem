@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dqo0rt1qi4rw4"]
+[gd_scene load_steps=52 format=3 uid="uid://dqo0rt1qi4rw4"]
 
 [ext_resource type="Texture2D" uid="uid://23fafmj4wouq" path="res://aniations/Staerie/5_3_1_frame0000.png.adcc5e17-1602-408c-92cb-348cdca45925.png" id="1_40ifw"]
 [ext_resource type="Script" uid="uid://cr1nibu7pbyy5" path="res://scenes/area/bridgeRepair/bridge.gd" id="1_hw5fe"]
@@ -14,6 +14,33 @@
 [ext_resource type="Texture2D" uid="uid://bj3p27rflxhwl" path="res://aniations/Staerie/3_3_1_frame0011.png.14c2e7f9-3334-45e1-8272-71dcf6ca47c7.png" id="10_t08lv"]
 [ext_resource type="Texture2D" uid="uid://i3fdxquhb0o4" path="res://aniations/Staerie/3_4_1_frame0012.png.5ac8efd0-5a11-4930-9f26-1ded4d86e241.png" id="11_7twxt"]
 [ext_resource type="AudioStream" uid="uid://4btym4wlf7yl" path="res://art/sounds/music/Nature Relaxing Sounds _ 5 Minutes of Birds, Trees, and Wind [ ezmp3.cc ].mp3" id="14_a42x8"]
+[ext_resource type="Texture2D" uid="uid://c0420n2wbac21" path="res://art/asset/GizoHammerSwing.png" id="15_fqx18"]
+[ext_resource type="Texture2D" uid="uid://cxo1ap1glqlh6" path="res://aniations/heat/bridgeRepair/walk1.png" id="15_yo0ri"]
+[ext_resource type="Texture2D" uid="uid://dpdytk3j75mdm" path="res://aniations/heat/bridgeRepair/walk2.png" id="16_fqx18"]
+[ext_resource type="Texture2D" uid="uid://jknctcvvapat" path="res://aniations/heat/bridgeRepair/walk3.png" id="17_t08lv"]
+[ext_resource type="Texture2D" uid="uid://dh5ujkhew8ywm" path="res://aniations/heat/bridgeRepair/walk4.png" id="18_7twxt"]
+[ext_resource type="Texture2D" uid="uid://b3ug5cvjs5u64" path="res://aniations/misc/bridgeConstruction/5_1_1_frame0000.png.f23319e7-67c9-46bc-9a22-7c8eedfe50b6.png" id="19_ni12i"]
+[ext_resource type="Texture2D" uid="uid://bviw81ep71pjn" path="res://aniations/misc/bridgeConstruction/5_2_1_frame0001.png.c8df301f-9456-4518-89aa-af65df1e41a9.png" id="20_ix4hc"]
+[ext_resource type="Texture2D" uid="uid://dpis6ulo775wx" path="res://aniations/misc/bridgeConstruction/5_3_1_frame0002.png.e72ac097-5a9f-4b99-b3da-e4f344c48c84.png" id="21_tvd85"]
+[ext_resource type="Texture2D" uid="uid://c4ebxlwerfd0c" path="res://aniations/misc/bridgeConstruction/5_4_1_frame0003.png.db88ff8c-2d72-4b18-97ef-07a8acc725ac.png" id="22_mqh8y"]
+[ext_resource type="Texture2D" uid="uid://dujpsa63roupc" path="res://aniations/misc/bridgeConstruction/5_5_1_frame0004.png.a56accdf-a2e3-4330-ae70-46da3ac9489a.png" id="23_vf485"]
+[ext_resource type="Texture2D" uid="uid://btcg6bm6ank0c" path="res://aniations/misc/bridgeConstruction/4_1_1_frame0005.png.f22798d2-8a0a-44b3-89c8-e35b4c661edf.png" id="24_xv5vt"]
+[ext_resource type="Texture2D" uid="uid://damhrjqp73hy7" path="res://aniations/misc/bridgeConstruction/4_2_1_frame0006.png.e1d70a3d-5e19-43c4-86f4-f1a318bd9402.png" id="25_psdpm"]
+[ext_resource type="Texture2D" uid="uid://i8u1n8oc06gw" path="res://aniations/misc/bridgeConstruction/4_3_1_frame0007.png.a176f020-e74e-42ef-95b4-26e371f77d7b.png" id="26_ardsa"]
+[ext_resource type="Texture2D" uid="uid://p2re8ia6j1he" path="res://aniations/misc/bridgeConstruction/4_4_1_frame0008.png.0e6d57ed-ca08-4253-a9ba-04919f199a29.png" id="27_utcwn"]
+[ext_resource type="Texture2D" uid="uid://dif1pgirnk2yr" path="res://aniations/misc/bridgeConstruction/2_1_1_frame0015.png.143304af-d22d-4507-9025-788568ff5af5.png" id="28_jvnu3"]
+[ext_resource type="Texture2D" uid="uid://c0ow8rqgwbm5n" path="res://aniations/misc/bridgeConstruction/2_2_1_frame0016.png.058ac942-7d52-4a60-b91f-8f1bedb2454a.png" id="29_56wvn"]
+[ext_resource type="Texture2D" uid="uid://bc27wdwi6l7no" path="res://aniations/misc/bridgeConstruction/2_3_1_frame0017.png.bbe5e4c9-54cc-4209-bc22-fae5c16ac53a.png" id="30_oi48o"]
+[ext_resource type="Texture2D" uid="uid://dhnduo7deshgt" path="res://aniations/misc/bridgeConstruction/2_4_1_frame0018.png.f1d4603e-d1db-4292-b944-9623938b49c6.png" id="31_norf0"]
+[ext_resource type="Texture2D" uid="uid://degxxc6hu6xxs" path="res://aniations/misc/bridgeConstruction/2_5_1_frame0019.png.6be06791-6ca6-4d3a-b7aa-be290444afaf.png" id="32_ryawl"]
+[ext_resource type="Texture2D" uid="uid://poicmjhembnx" path="res://aniations/misc/bridgeConstruction/3_1_1_frame0010.png.82b6b711-dbf7-497b-86f6-eb75dfe22826.png" id="33_xkdyd"]
+[ext_resource type="Texture2D" uid="uid://dttxmofltd3hw" path="res://aniations/misc/bridgeConstruction/3_2_1_frame0011.png.d439d0f2-ddd0-4178-b43c-6f56d23bc392.png" id="34_dnynl"]
+[ext_resource type="Texture2D" uid="uid://gjcgpxljlc0m" path="res://aniations/misc/bridgeConstruction/3_3_1_frame0012.png.2e5c890c-dbc8-4e73-a473-61e1bc6852f5.png" id="35_0fy2o"]
+[ext_resource type="Texture2D" uid="uid://bcr3ejaiow7cl" path="res://aniations/misc/bridgeConstruction/3_4_1_frame0013.png.f3249066-9052-4b44-8366-30c045b6b3c9.png" id="36_dmirk"]
+[ext_resource type="Texture2D" uid="uid://ccrlxtmvep4m5" path="res://aniations/misc/bridgeConstruction/3_5_1_frame0014.png.41057db6-ad76-4f50-bc3b-b0dfc67edda5.png" id="37_ram7g"]
+[ext_resource type="Texture2D" uid="uid://b1lldqt0bi7h7" path="res://aniations/misc/bridgeConstruction/1_1_1_frame0020.png.aadf6134-da31-4972-8a9e-8b0f2df8bf1e.png" id="38_xfp04"]
+[ext_resource type="Texture2D" uid="uid://bp5rbp7uy0rvg" path="res://aniations/misc/bridgeConstruction/1_2_1_frame0021.png.24aff6bb-b540-45c8-9979-d625ad237d89.png" id="39_p6auj"]
+[ext_resource type="Texture2D" uid="uid://bqcv7vut43gg1" path="res://aniations/misc/bridgeConstruction/4_5_1_frame0009.png.94f5645c-d980-4e24-ab9e-3c831158eacb.png" id="40_4bna7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1a1ed"]
 animations = [{
@@ -58,6 +85,281 @@ animations = [{
 "name": &"default",
 "speed": 20.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ni12i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_xfp04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_p6auj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jvnu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_56wvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_oi48o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_norf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ryawl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xkdyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dnynl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0fy2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_dmirk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ram7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xv5vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_psdpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ardsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_utcwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_4bna7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ni12i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ix4hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tvd85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mqh8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vf485")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5n80u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_yo0ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fqx18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t08lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7twxt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="Animation" id="Animation_yo0ri"]
+resource_name = "BridgeFix"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.524061, 9.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/HeatWalk:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.524061, 2.15027, 4.26813, 6.63333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-52, 560), Vector2(482, 483), Vector2(1062, 555), Vector2(1207, 513)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect/Hammer:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-62.8319, 43.9823]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect/Hammer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.25463, 5.5, 7.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-229, 510), Vector2(-229, 510), Vector2(1311, 343)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect/HeatWalk:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0.533333, 0.662214, 0.8, 0.936939, 1.06667, 1.19555, 1.33333, 1.47027, 1.60556, 1.73444, 1.87223, 2.00917, 2.13333, 2.26221, 2.4, 2.53694, 2.66667, 2.79555, 2.93333, 3.07027, 3.19164, 3.32052, 3.45831, 3.59525, 3.73333, 3.86221, 4, 4.13694, 4.37112, 4.5, 4.63779, 4.77473, 5.07863, 5.2, 5.32888, 5.46667, 5.60361, 5.74169, 5.87057, 6.00836, 6.1453, 6.37948, 6.50836, 6.64614, 6.78308),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect/AnimatedSprite2D:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.433333, 0.633333, 0.833333, 1.03333, 1.23333, 1.43333, 1.63333, 1.83333, 2.03333, 2.23333, 2.43333, 2.63333, 2.83333, 3, 3.16667, 3.36667, 3.56667, 3.76667, 3.96667, 4.16667, 4.36667, 4.56667, 4.76667, 4.96667, 5.26667, 5.46667, 5.66667, 5.86667, 6.06667, 6.26667, 6.46667, 6.66667, 6.86667, 7.06667, 7.26667, 7.46667, 7.66667, 7.83333, 8, 8.2, 8.4, 8.76667, 8.96667, 9.16667, 9.36667, 9.56667, 9.76667, 9.93333, 10.1, 10.3, 10.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 12, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 12, 12, 13, 14, 7, 8, 9, 10, 10, 11, 12, 12, 13, 14]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect/AnimatedSprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.39, 0.58, 9.12, 9.39, 9.67),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05), Vector2(0.65, 0.65), Vector2(0.65, 0.65), Vector2(0.85, 0.85), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_t08lv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/HeatWalk:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-52, 560)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect/Hammer:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect/Hammer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-229, 510)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect/HeatWalk:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect/AnimatedSprite2D:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect/AnimatedSprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqx18"]
+_data = {
+&"BridgeFix": SubResource("Animation_yo0ri"),
+&"RESET": SubResource("Animation_t08lv")
+}
 
 [sub_resource type="Animation" id="Animation_a42x8"]
 resource_name = "ChangePosition"
@@ -163,17 +465,6 @@ sprite_frames = SubResource("SpriteFrames_1a1ed")
 frame = 11
 frame_progress = 1.0
 
-[node name="IdleBoy" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_mflf0")
-}
-autoplay = "StaerieIdle"
-
-[node name="MusicYep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_a42x8")
-volume_db = -7.5
-autoplay = true
-
 [node name="Upgrade" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -189,3 +480,46 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Fix Bridge!"
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="ColorRect" parent="."]
+process_mode = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(564, 226)
+scale = Vector2(1e-05, 1e-05)
+sprite_frames = SubResource("SpriteFrames_ni12i")
+
+[node name="Hammer" type="Sprite2D" parent="TextureRect"]
+position = Vector2(-229, 510)
+scale = Vector2(-0.565, 0.565)
+texture = ExtResource("15_fqx18")
+
+[node name="HeatWalk" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(-52, 560)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_5n80u")
+autoplay = "default"
+
+[node name="BridgeFixingAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fqx18")
+}
+
+[node name="IdleBoy" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mflf0")
+}
+autoplay = "StaerieIdle"
+
+[node name="MusicYep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_a42x8")
+volume_db = -7.5
+autoplay = true

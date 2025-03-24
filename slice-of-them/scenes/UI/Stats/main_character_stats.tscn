@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://dwddmjgv0766x"]
 
 [ext_resource type="Script" uid="uid://dcm1l5kmngocd" path="res://main_character_stats.gd" id="1_p70dg"]
-[ext_resource type="Texture2D" uid="uid://c108d5wyjojp1" path="res://icon.svg" id="2_nqswt"]
+[ext_resource type="Texture2D" uid="uid://c3eqma71qq3di" path="res://art/characters/mainCharacter/heatSit.png" id="2_fvfs3"]
 [ext_resource type="Theme" uid="uid://carm5ka8me2pc" path="res://resources/Textures/Objects/ItemButton.tres" id="3_64fdn"]
 [ext_resource type="Texture2D" uid="uid://cld44matr7xjm" path="res://art/skills/PoisonBottle.png" id="3_i7hgh"]
 [ext_resource type="Texture2D" uid="uid://bd7mc53sn3yp3" path="res://art/skills/Sand.png" id="5_d0nbj"]
@@ -221,8 +221,9 @@ grow_vertical = 2
 color = Color(0.593134, 0.593134, 0.593134, 1)
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="."]
-position = Vector2(629, 443)
-texture = ExtResource("2_nqswt")
+position = Vector2(633, 471)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("2_fvfs3")
 
 [node name="StatContainer" type="GridContainer" parent="."]
 layout_mode = 0

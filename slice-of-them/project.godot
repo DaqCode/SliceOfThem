@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Slice Of Them"
+run/main_scene="uid://rb71hfq6sg4y"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

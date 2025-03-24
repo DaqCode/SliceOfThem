@@ -21,6 +21,7 @@ func _ready() -> void:
 	# Blacksmith
 	$Blacksmith.connect("mouse_entered", Callable(self, "_on_BlacksmithButton_mouse_entered"))
 	$Blacksmith.connect("mouse_exited", Callable(self, "_on_BlacksmithButton_mouse_exited"))
+	$Blacksmith.connect("pressed", Callable(self, "_on_BlacksmithButton_pressed"))
 
 	# Training
 	$Training.connect("mouse_entered", Callable(self, "_on_TrainingButton_mouse_entered"))
@@ -67,6 +68,9 @@ func _on_BlacksmithButton_mouse_entered() -> void:
 
 func _on_BlacksmithButton_mouse_exited() -> void:
 	$Blacksmith.theme = THEME_NORMAL
+
+func _on_BlacksmithButton_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/area/blacksmith/black_smith.tscn")
 
 
 # Training Button

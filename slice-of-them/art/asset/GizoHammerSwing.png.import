@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc7be1y5b1qte"
-path="res://.godot/imported/BlackSmithBud.png-75cee39ec24d0de87ad0e3369245d559.ctex"
+uid="uid://c0420n2wbac21"
+path="res://.godot/imported/GizoHammerSwing.png-a62a85f4ec52cc87a0d2c7bbf2d2f450.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/background/blacksmith/BlackSmithBud.png"
-dest_files=["res://.godot/imported/BlackSmithBud.png-75cee39ec24d0de87ad0e3369245d559.ctex"]
+source_file="res://art/asset/GizoHammerSwing.png"
+dest_files=["res://.godot/imported/GizoHammerSwing.png-a62a85f4ec52cc87a0d2c7bbf2d2f450.ctex"]
 
 [params]
 

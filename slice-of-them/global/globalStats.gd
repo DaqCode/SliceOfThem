@@ -9,7 +9,7 @@ signal stats_updated  # Signal to notify when stats are updated
 @export var crit_stat: int = 0
 @export var agility_stat: int = 0
 
-@export var coins: int = 0
+@export var coins: int = 100000
 
 # Derived stats (calculated via formulas)
 var effective_health: float = base_health

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc7be1y5b1qte"
-path="res://.godot/imported/BlackSmithBud.png-75cee39ec24d0de87ad0e3369245d559.ctex"
+uid="uid://c4ebxlwerfd0c"
+path="res://.godot/imported/5_4_1_frame0003.png.db88ff8c-2d72-4b18-97ef-07a8acc725ac.png-f8abe9bffd127a5b610cac8ba01ce446.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/background/blacksmith/BlackSmithBud.png"
-dest_files=["res://.godot/imported/BlackSmithBud.png-75cee39ec24d0de87ad0e3369245d559.ctex"]
+source_file="res://aniations/misc/bridgeConstruction/5_4_1_frame0003.png.db88ff8c-2d72-4b18-97ef-07a8acc725ac.png"
+dest_files=["res://.godot/imported/5_4_1_frame0003.png.db88ff8c-2d72-4b18-97ef-07a8acc725ac.png-f8abe9bffd127a5b610cac8ba01ce446.ctex"]
 
 [params]
 

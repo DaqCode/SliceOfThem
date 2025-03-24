@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc7be1y5b1qte"
-path="res://.godot/imported/BlackSmithBud.png-75cee39ec24d0de87ad0e3369245d559.ctex"
+uid="uid://b278i00un6pvv"
+path="res://.godot/imported/Gaze.png-bc56b0901af019a112c835733c404f66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/background/blacksmith/BlackSmithBud.png"
-dest_files=["res://.godot/imported/BlackSmithBud.png-75cee39ec24d0de87ad0e3369245d559.ctex"]
+source_file="res://art/background/blacksmith/Gaze.png"
+dest_files=["res://.godot/imported/Gaze.png-bc56b0901af019a112c835733c404f66.ctex"]
 
 [params]
 
