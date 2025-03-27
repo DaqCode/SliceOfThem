@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://tmw7sg2cb8uw"]
+
+[ext_resource type="Script" uid="uid://rqkuqmn7otm5" path="res://resources/clouds/BaseCloud.gd" id="1_e3tcu"]
+
+[node name="BaseCloud" type="Node2D"]
+script = ExtResource("1_e3tcu")
+
+[node name="Cloud" type="Sprite2D" parent="."]
+
+[node name="AnimationControl" type="AnimationPlayer" parent="."]

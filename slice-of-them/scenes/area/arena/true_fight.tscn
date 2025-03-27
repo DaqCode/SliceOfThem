@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://44mbo6jvdbc8"]
+
+[ext_resource type="Script" uid="uid://c4gp6knsi8qro" path="res://scenes/area/arena/true_fight.gd" id="1_kg1mj"]
+[ext_resource type="PackedScene" uid="uid://cv883t3tcdq1s" path="res://scenes/area/arena/heatStance/heat_battle_stance.tscn" id="1_nyw4w"]
+[ext_resource type="Texture2D" uid="uid://c108d5wyjojp1" path="res://icon.svg" id="2_vgew3"]
+
+[node name="TrueFight" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kg1mj")
+
+[node name="heatBattleStance" parent="." instance=ExtResource("1_nyw4w")]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 187.0
+offset_right = -639.0
+offset_bottom = -118.0
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(966, 405)
+texture = ExtResource("2_vgew3")
+
+[node name="Lose" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -54.0
+offset_right = -56.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Win" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 205.0
+
+[node name="OtherSide" type="Panel" parent="Win"]
+layout_mode = 0
+offset_top = 443.0
+offset_right = 1151.0
+offset_bottom = 649.0

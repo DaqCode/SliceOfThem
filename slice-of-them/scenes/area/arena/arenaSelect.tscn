@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b10qfgaeg115m"]
+[gd_scene load_steps=3 format=3 uid="uid://b10qfgaeg115m"]
+
+[ext_resource type="PackedScene" uid="uid://ds4h02sys20n3" path="res://resources/ResourcesTemplate/select_fight.tscn" id="1_16i41"]
+[ext_resource type="Script" uid="uid://djup8i6n5odod" path="res://scenes/area/arena/arena_select.gd" id="1_hegx8"]
 
 [node name="ArenaSelect" type="Control"]
 layout_mode = 3
@@ -7,4 +10,155 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hegx8")
 metadata/_edit_use_anchors_ = true
+
+[node name="ArenaSelect1" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 148.0
+offset_right = 1155.0
+offset_bottom = 293.0
+scale = Vector2(0.95, 0.95)
+pivot_offset = Vector2(577, 91)
+theme_override_constants/h_separation = -23
+columns = 10
+
+[node name="Level1" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 1
+
+[node name="Level2" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 2
+
+[node name="Level3" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 3
+
+[node name="Level4" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 4
+
+[node name="Level5" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 5
+
+[node name="Level6" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 6
+
+[node name="Level7" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 7
+
+[node name="Level8" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 8
+
+[node name="Level9" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 9
+
+[node name="Level10" parent="ArenaSelect1" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 10
+
+[node name="ArenaSelect2" type="GridContainer" parent="."]
+layout_mode = 0
+offset_top = 232.0
+offset_right = 1153.0
+offset_bottom = 377.0
+scale = Vector2(0.975, 0.975)
+pivot_offset = Vector2(577, 91)
+theme_override_constants/h_separation = -23
+columns = 10
+
+[node name="Level11" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 11
+
+[node name="Level12" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 12
+
+[node name="Level13" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 13
+
+[node name="Level14" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 14
+
+[node name="Level15" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 15
+
+[node name="Level16" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 16
+
+[node name="Level17" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 17
+
+[node name="Level18" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 18
+
+[node name="Level19" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 19
+
+[node name="Level20" parent="ArenaSelect2" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 20
+
+[node name="ArenaSelect3" type="GridContainer" parent="."]
+layout_mode = 0
+offset_top = 307.0
+offset_right = 1153.0
+offset_bottom = 452.0
+pivot_offset = Vector2(577, 91)
+theme_override_constants/h_separation = -23
+columns = 10
+
+[node name="Level21" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 21
+
+[node name="Level22" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 22
+
+[node name="Level23" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 23
+
+[node name="Level24" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 24
+
+[node name="Level25" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 25
+
+[node name="Level26" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 26
+
+[node name="Level27" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 27
+
+[node name="Level28" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 28
+
+[node name="Level29" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 29
+
+[node name="Level30" parent="ArenaSelect3" instance=ExtResource("1_16i41")]
+layout_mode = 2
+battle_id = 30

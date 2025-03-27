@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnikos006xldk"]
+
+[ext_resource type="Script" uid="uid://rqkuqmn7otm5" path="res://resources/clouds/BaseCloud.gd" id="1_xnikw"]
+[ext_resource type="Texture2D" uid="uid://5n805ssuyid5" path="res://art/clouds/PillowCloud.png" id="2_xnikw"]
+[ext_resource type="Animation" uid="uid://cafdnnal5r7uj" path="res://aniations/cloudAnimations/Float.res" id="3_hhywk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7alb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xnikw")
+}],
+"loop": true,
+"name": &"Cloud",
+"speed": 5.0
+}]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kt6fm"]
+_data = {
+&"Float": ExtResource("3_hhywk")
+}
+
+[node name="PillowCloud" type="Node2D"]
+script = ExtResource("1_xnikw")
+cloud_name = "Pillow Cloud"
+defense_bonus = 400
+description = "Oh wow. It's comfortable!"
+
+[node name="Cloud" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u7alb")
+animation = &"Cloud"
+
+[node name="AnimationControl" type="AnimationPlayer" parent="."]
+libraries = {
+&"CloudAnimations": SubResource("AnimationLibrary_kt6fm")
+}
+autoplay = "CloudAnimations/Float"

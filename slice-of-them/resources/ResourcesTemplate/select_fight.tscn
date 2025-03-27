@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds4h02sys20n3"]
+
+[ext_resource type="Theme" uid="uid://cjhe1rovtu84h" path="res://resources/Textures/Areas/selecFight.tres" id="1_2rf6o"]
+[ext_resource type="Script" uid="uid://bfcqtcpn87frg" path="res://resources/ResourcesTemplate/select_fight.gd" id="2_7tvx5"]
+
+[node name="SelectFight" type="Button"]
+offset_right = 136.0
+offset_bottom = 136.0
+pivot_offset = Vector2(68, 75)
+theme = ExtResource("1_2rf6o")
+script = ExtResource("2_7tvx5")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

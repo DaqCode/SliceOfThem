@@ -4,12 +4,43 @@ signal stats_updated  # Signal to notify when stats are updated
 
 # Base stats
 @export var base_health: int = 10
-@export var base_attack: int = 10
-@export var defense: int = 0
-@export var crit_stat: int = 0
-@export var agility_stat: int = 0
+@export var base_attack: int = 2
+@export var defense: int = 1
+@export var crit_stat: int = 1
+@export var agility_stat: int = 1
 
-@export var coins: int = 100000
+@export var coins: int = 0
+
+
+@export var sword_upgrade_number: int = 0
+# Sword Upgrades
+# 0: Wood Sword
+# 1: Bronze Sword
+# 2: Iron Sword
+# 3: Diamond Sword
+# 4: Vampire Blade
+# 5: Shiver Sword
+# 6: Double Shadow Spear
+# 7: Void’s Cleaver
+# 8: Crystalized Sword (Karen’s Choice)
+# 9: Shocked Dagger
+# 10: Rainbow Sword
+# 11: Staerie’s Last Hope (Final Sword Upgrade)
+
+@export var cloud_upgrade_number: int = 0
+# Cloud Upgrades
+# 0: Droopy Cloud
+# 1: Fluffy Cloud
+# 2: Pillow Cloud
+# 3: Fluffier Cloud
+# 4: Nimbus Cloud
+# 5: Fire Cloud (Karen’s Choice)
+# 6: Iron Cloud
+# 7: Rainbow Cloud
+# 8: Stardrop Cloud
+# 9: Neutron Cloud
+# 10: Staerie’s Resting Cloud (Final Cloud Upgrade)
+
 
 # Derived stats (calculated via formulas)
 var effective_health: float = base_health
