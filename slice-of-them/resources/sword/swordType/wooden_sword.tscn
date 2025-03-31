@@ -26,7 +26,7 @@ attack_bonus = 50
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 0.999992)
+position = Vector2(0, -78)
 scale = Vector2(0.65, 0.65)
 sprite_frames = SubResource("SpriteFrames_krww6")
 animation = &"swing"
@@ -34,7 +34,7 @@ offset = Vector2(1.53846, -123.077)
 
 [node name="AnimationControl" type="AnimationPlayer" parent="."]
 libraries = {
-"SwordAnimation": ExtResource("4_qsppj")
+&"SwordAnimation": ExtResource("4_qsppj")
 }
 autoplay = "idle"
 

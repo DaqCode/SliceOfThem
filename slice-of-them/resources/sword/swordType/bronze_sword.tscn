@@ -53,6 +53,6 @@ animation = &"swing"
 
 [node name="AnimationControl" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vyew8"),
-"SwordAnimation": ExtResource("4_6pofk")
+&"": SubResource("AnimationLibrary_vyew8"),
+&"SwordAnimation": ExtResource("4_6pofk")
 }

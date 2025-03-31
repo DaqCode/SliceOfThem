@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://44mbo6jvdbc8"]
+[gd_scene load_steps=5 format=3 uid="uid://44mbo6jvdbc8"]
 
 [ext_resource type="Script" uid="uid://c4gp6knsi8qro" path="res://scenes/area/arena/true_fight.gd" id="1_kg1mj"]
 [ext_resource type="PackedScene" uid="uid://cv883t3tcdq1s" path="res://scenes/area/arena/heatStance/heat_battle_stance.tscn" id="1_nyw4w"]
-[ext_resource type="Texture2D" uid="uid://c108d5wyjojp1" path="res://icon.svg" id="2_vgew3"]
+[ext_resource type="PackedScene" uid="uid://m4jigyrt7sfi" path="res://scenes/characters/enemies/enemy.tscn" id="3_iynfd"]
+[ext_resource type="Theme" uid="uid://cij5kovlc6tfp" path="res://resources/Textures/UIPurpose/battleThemes.tres" id="4_iynfd"]
 
 [node name="TrueFight" type="Control"]
 layout_mode = 3
@@ -14,17 +15,13 @@ grow_vertical = 2
 script = ExtResource("1_kg1mj")
 
 [node name="heatBattleStance" parent="." instance=ExtResource("1_nyw4w")]
-layout_mode = 1
-offset_left = 2.0
-offset_top = 187.0
-offset_right = -639.0
-offset_bottom = -118.0
+position = Vector2(244, 282)
 
-[node name="Enemy" type="Sprite2D" parent="."]
-position = Vector2(966, 405)
-texture = ExtResource("2_vgew3")
+[node name="Enemy" parent="." instance=ExtResource("3_iynfd")]
+position = Vector2(935, 317)
 
 [node name="Lose" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -49,3 +46,44 @@ layout_mode = 0
 offset_top = 443.0
 offset_right = 1151.0
 offset_bottom = 649.0
+
+[node name="TurnCounter" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.5
+offset_right = 133.5
+offset_bottom = 65.0
+grow_horizontal = 2
+theme = ExtResource("4_iynfd")
+
+[node name="TurnLabel" type="Label" parent="TurnCounter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.5
+offset_top = -28.5
+offset_right = 98.5
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Turn: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inventory" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -289.0
+offset_top = -129.0
+offset_right = 289.0
+grow_horizontal = 2
+grow_vertical = 0

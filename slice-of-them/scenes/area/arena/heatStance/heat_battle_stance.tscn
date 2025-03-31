@@ -5,37 +5,25 @@
 [ext_resource type="Texture2D" uid="uid://c3eqma71qq3di" path="res://art/characters/mainCharacter/heatSit.png" id="2_lc6jx"]
 [ext_resource type="PackedScene" uid="uid://ueoulx8dpkno" path="res://resources/sword/swordType/wooden_sword.tscn" id="3_o01nu"]
 
-[node name="heatBattleStance" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 127.0
-offset_top = 14.0
-offset_right = -514.0
-offset_bottom = -291.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="heatBattleStance" type="Node2D"]
 script = ExtResource("1_lc6jx")
 
 [node name="DroopyCloud" type="Sprite2D" parent="."]
-position = Vector2(216, 240)
+position = Vector2(-13, 84)
 texture = ExtResource("1_dd0bg")
 
 [node name="Heat" type="Sprite2D" parent="."]
-position = Vector2(240, 164)
 scale = Vector2(0.575, 0.575)
 texture = ExtResource("2_lc6jx")
 
 [node name="WoodenSword" parent="." instance=ExtResource("3_o01nu")]
-position = Vector2(383, 195)
+position = Vector2(139, 44)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_left = -101.0
-offset_top = 304.0
-offset_right = 544.0
-offset_bottom = 334.0
+offset_left = -198.0
+offset_top = 137.0
+offset_right = 221.0
+offset_bottom = 167.0
 max_value = 10.0
 step = 1.0
 value = 10.0

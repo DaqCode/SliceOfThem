@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cij5kovlc6tfp"]
+
+[ext_resource type="FontFile" uid="uid://bwlh2yyceho1s" path="res://resources/Fonts/AvenueX-Regular.otf" id="1_ptu6d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bifim"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vnrd"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 0.841309, 0.21875, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.996094, 0.544739, 0.544739, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+shadow_color = Color(0.980392, 0.6, 0.258824, 0.647059)
+shadow_size = 1
+shadow_offset = Vector2(-2.5, 2.5)
+anti_aliasing = false
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0.449219, 0.449219, 0.449219, 1)
+Label/colors/font_shadow_color = Color(1, 0.654902, 0.164706, 0.568627)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 4
+Label/constants/shadow_offset_x = -1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 9
+Label/font_sizes/font_size = 50
+Label/fonts/font = ExtResource("1_ptu6d")
+Label/styles/normal = SubResource("StyleBoxEmpty_bifim")
+Panel/styles/panel = SubResource("StyleBoxFlat_8vnrd")

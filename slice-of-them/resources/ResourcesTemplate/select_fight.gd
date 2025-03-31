@@ -5,7 +5,6 @@ extends Button
 @export var tween_duration: float = 0.1  # Smooth transition time
 
 @export var battle_id: int = 0  # Unique ID for each battle
-signal battle_selected(battle_id: int)  # Signal to send battle info
 
 var tween: Tween = null
 
@@ -23,4 +22,3 @@ func animate_scale(target_scale: float) -> void:
 
 func _on_pressed() -> void:
 	print("Battle Selected:", battle_id)
-	battle_selected.emit(battle_id)  # Send the battle ID

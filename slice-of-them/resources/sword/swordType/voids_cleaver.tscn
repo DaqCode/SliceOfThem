@@ -55,6 +55,7 @@ flip_h = true
 
 [node name="AnimationControl" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vyew8"),
-"SwordAnimation": ExtResource("4_1r0ns")
+&"": SubResource("AnimationLibrary_vyew8"),
+&"SwordAnimation": ExtResource("4_1r0ns")
 }
+speed_scale = 2.0

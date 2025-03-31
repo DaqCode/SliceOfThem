@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cewplduh87op1"]
+
+[ext_resource type="Script" uid="uid://rqkuqmn7otm5" path="res://resources/clouds/BaseCloud.gd" id="1_6kbyd"]
+[ext_resource type="Texture2D" uid="uid://bkp7s64bjoimn" path="res://art/clouds/FluffierCloud.png" id="2_6kbyd"]
+[ext_resource type="Animation" uid="uid://cafdnnal5r7uj" path="res://aniations/cloudAnimations/Float.res" id="3_fyvjo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7alb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6kbyd")
+}],
+"loop": true,
+"name": &"Cloud",
+"speed": 5.0
+}]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kt6fm"]
+_data = {
+&"Float": ExtResource("3_fyvjo")
+}
+
+[node name="FluffiestCloud" type="Node2D"]
+script = ExtResource("1_6kbyd")
+cloud_name = "Fluffiest Cloud"
+defense_bonus = 750
+description = "He's got nothing in his mind."
+
+[node name="Cloud" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 4.94018)
+sprite_frames = SubResource("SpriteFrames_u7alb")
+animation = &"Cloud"
+
+[node name="AnimationControl" type="AnimationPlayer" parent="."]
+libraries = {
+&"CloudAnimations": SubResource("AnimationLibrary_kt6fm")
+}
+autoplay = "CloudAnimations/Float"

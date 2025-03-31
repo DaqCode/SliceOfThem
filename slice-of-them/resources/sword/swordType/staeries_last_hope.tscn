@@ -89,6 +89,7 @@ process_material = SubResource("ParticleProcessMaterial_ujcfg")
 
 [node name="AnimationControl" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vyew8"),
-"SwordAnimation": ExtResource("4_cshxq")
+&"": SubResource("AnimationLibrary_vyew8"),
+&"SwordAnimation": ExtResource("4_cshxq")
 }
+speed_scale = 2.0

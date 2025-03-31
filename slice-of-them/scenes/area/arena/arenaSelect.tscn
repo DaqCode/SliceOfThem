@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b10qfgaeg115m"]
+[gd_scene load_steps=4 format=3 uid="uid://b10qfgaeg115m"]
 
 [ext_resource type="PackedScene" uid="uid://ds4h02sys20n3" path="res://resources/ResourcesTemplate/select_fight.tscn" id="1_16i41"]
 [ext_resource type="Script" uid="uid://djup8i6n5odod" path="res://scenes/area/arena/arena_select.gd" id="1_hegx8"]
+[ext_resource type="PackedScene" uid="uid://44mbo6jvdbc8" path="res://scenes/area/arena/true_fight.tscn" id="2_1qrm7"]
 
 [node name="ArenaSelect" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hegx8")
+battle_system = ExtResource("2_1qrm7")
 metadata/_edit_use_anchors_ = true
 
 [node name="ArenaSelect1" type="GridContainer" parent="."]
