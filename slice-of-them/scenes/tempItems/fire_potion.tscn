@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://um14n4g2awt0"]
+
+[ext_resource type="Texture2D" uid="uid://cmhaalpyjyjdg" path="res://art/drinkable/FirePotion.png" id="1_v4y73"]
+
+[sub_resource type="Gradient" id="Gradient_wfyqn"]
+offsets = PackedFloat32Array(0.344961, 0.728682, 0.875969, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.5625, 0, 1, 0.992188, 1, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_84678"]
+gradient = SubResource("Gradient_wfyqn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mdxnt"]
+particle_flag_disable_z = true
+direction = Vector3(2, -0.5, 0)
+spread = 180.0
+initial_velocity_min = -100.0
+initial_velocity_max = 100.0
+angular_velocity_min = -250.0
+angular_velocity_max = 250.0
+gravity = Vector3(0, -100, 0)
+scale_min = 3.0
+scale_max = 5.0
+color_ramp = SubResource("GradientTexture1D_84678")
+
+[node name="FirePotion" type="Sprite2D"]
+texture = ExtResource("1_v4y73")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -1
+amount = 64
+lifetime = 2.0
+explosiveness = 0.1
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_mdxnt")

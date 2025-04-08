@@ -19,6 +19,7 @@ position = Vector2(244, 282)
 
 [node name="Enemy" parent="." instance=ExtResource("3_iynfd")]
 position = Vector2(935, 317)
+sprite_texture = null
 
 [node name="Lose" type="Panel" parent="."]
 visible = false

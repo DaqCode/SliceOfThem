@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://clcgbisyboony"]
+
+[ext_resource type="Texture2D" uid="uid://c1rka1s1guro2" path="res://aniations/cloudSwitch/Frame1.png" id="1_j1j6e"]
+[ext_resource type="Script" uid="uid://c76cm66g0ei47" path="res://scenes/area/blacksmith/show_the_potion_float.gd" id="2_2updc"]
+[ext_resource type="Texture2D" uid="uid://cmhaalpyjyjdg" path="res://art/drinkable/FirePotion.png" id="2_fv3ch"]
+[ext_resource type="Theme" uid="uid://dptf7gvb55y3m" path="res://resources/Textures/UIPurpose/shopPurchase.tres" id="4_2updc"]
+
+[node name="ShowThePotionFloat" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("1_j1j6e")
+script = ExtResource("2_2updc")
+
+[node name="PotionSample" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 204.444
+offset_top = 180.0
+offset_right = -848.556
+offset_bottom = -277.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.53, 1.53)
+pivot_offset = Vector2(49.1413, 95.8108)
+texture = ExtResource("2_fv3ch")
+
+[node name="PotionDescription" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 326.667
+offset_top = 255.556
+offset_right = -92.3334
+offset_bottom = -170.444
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(235.186, 93.2575)
+theme = ExtResource("4_2updc")
+theme_override_font_sizes/font_size = 38
+text = "
+Inflicts burn on the enemy.
+
+"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PotionName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 415.556
+offset_top = 155.556
+offset_right = -382.444
+offset_bottom = -417.444
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(44.0756, 8.81281)
+theme = ExtResource("4_2updc")
+theme_override_font_sizes/font_size = 56
+text = "Flame Potion"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HideTimer" type="Timer" parent="."]
+wait_time = 1.5

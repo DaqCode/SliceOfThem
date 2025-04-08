@@ -1,10 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://bjjtx24302mpi"]
+[gd_scene load_steps=23 format=3 uid="uid://bjjtx24302mpi"]
 
 [ext_resource type="Script" uid="uid://drli7g8kouc5m" path="res://scenes/area/blacksmith/black_smith.gd" id="1_dn51w"]
 [ext_resource type="Texture2D" uid="uid://yx7gw0ihc1y8" path="res://art/background/blacksmith/BlacksmithBackground.png" id="2_f7ad2"]
 [ext_resource type="Texture2D" uid="uid://cc7be1y5b1qte" path="res://art/background/blacksmith/BlackSmithBud.png" id="2_lmo6l"]
 [ext_resource type="Texture2D" uid="uid://b278i00un6pvv" path="res://art/background/blacksmith/Gaze.png" id="3_e6hc8"]
 [ext_resource type="Texture2D" uid="uid://bfb44qgl5any3" path="res://art/asset/GizoHammer.png" id="4_gpcf2"]
+[ext_resource type="Theme" uid="uid://dptf7gvb55y3m" path="res://resources/Textures/UIPurpose/shopPurchase.tres" id="5_ur6wl"]
+[ext_resource type="Texture2D" uid="uid://bym4hmq786f8x" path="res://art/swords/BronzeSword/BronzeSword.png" id="7_awjlb"]
+[ext_resource type="Texture2D" uid="uid://domjiqfb381uo" path="res://art/clouds/FluffyCloud.png" id="7_nha4e"]
+[ext_resource type="PackedScene" uid="uid://clcgbisyboony" path="res://scenes/area/blacksmith/show_the_potion_float.tscn" id="8_nha4e"]
 
 [sub_resource type="Gradient" id="Gradient_gpcf2"]
 offsets = PackedFloat32Array(0.604651, 0.996124)
@@ -306,47 +310,60 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 48.0
-offset_top = -145.0
-offset_right = 185.0
-offset_bottom = 107.0
+offset_left = 52.0
+offset_top = -140.0
+offset_right = 182.0
+offset_bottom = 106.0
 grow_vertical = 2
 
 [node name="HealPoion" type="Button" parent="UseItems"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_ur6wl")
 text = "Heal Potion"
 
 [node name="StrengthPotion" type="Button" parent="UseItems"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Strength potion"
+theme = ExtResource("5_ur6wl")
+text = "Strength Potion"
+
+[node name="FlamePotion" type="Button" parent="UseItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_ur6wl")
+text = "Flame Potion"
 
 [node name="SpeedPotion" type="Button" parent="UseItems"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("5_ur6wl")
 text = "Speed Potion"
 
 [node name="RefreshPotion" type="Button" parent="UseItems"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Refresh potion"
+theme = ExtResource("5_ur6wl")
+text = "Refresh Potion"
 
 [node name="LuckPotion" type="Button" parent="UseItems"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Luck potion"
+theme = ExtResource("5_ur6wl")
+text = "Luck Potion"
 
 [node name="DarknessPotion" type="Button" parent="UseItems"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Darkness potion"
+theme = ExtResource("5_ur6wl")
+text = "Darkness Potion"
 
 [node name="Map" type="Button" parent="."]
 layout_mode = 0
@@ -355,7 +372,79 @@ offset_bottom = 8.0
 text = "Back To Menu
 "
 
+[node name="Sword" type="Node" parent="."]
+
+[node name="SwordImage" type="TextureRect" parent="Sword"]
+offset_left = 693.0
+offset_top = 92.0
+offset_right = 1113.0
+offset_bottom = 512.0
+rotation = 1.5708
+scale = Vector2(0.555, 0.555)
+pivot_offset = Vector2(207.525, 313.478)
+texture = ExtResource("7_awjlb")
+
+[node name="SwordPurchase" type="Button" parent="Sword"]
+offset_left = 865.0
+offset_top = 540.0
+offset_right = 1034.0
+offset_bottom = 570.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_ur6wl")
+
+[node name="SwordPrice" type="Label" parent="Sword"]
+offset_left = 869.0
+offset_top = 572.0
+offset_right = 1027.0
+offset_bottom = 615.0
+text = "Price: 1.09M+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cloud" type="Node" parent="."]
+
+[node name="CloudImage" type="TextureRect" parent="Cloud"]
+offset_left = 407.0
+offset_top = -110.0
+offset_right = 937.002
+offset_bottom = 420.0
+scale = Vector2(0.555, 0.555)
+pivot_offset = Vector2(272.455, 255.926)
+texture = ExtResource("7_nha4e")
+
+[node name="CloudPurchase" type="Button" parent="Cloud"]
+offset_left = 592.0
+offset_top = 13.0
+offset_right = 752.002
+offset_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_ur6wl")
+
+[node name="CloudPrice" type="Label" parent="Cloud"]
+offset_left = 593.0
+offset_top = 45.887
+offset_right = 754.002
+offset_bottom = 68.887
+text = "Price: 2.01M+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowThePotionFloat" parent="." instance=ExtResource("8_nha4e")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 244.0
+offset_top = 100.0
+offset_right = 1244.0
+offset_bottom = 700.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="GizoHammer" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(1047, 351)
 rotation = 2.99673
 scale = Vector2(0.365, 0.365)
@@ -407,25 +496,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_8ty12")
 }
 autoplay = "GazeFloat"
-
-[node name="SwordPurchase" type="Button" parent="."]
-layout_mode = 2
-offset_left = 789.0
-offset_top = 348.0
-offset_right = 1100.0
-offset_bottom = 420.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Purchase Sword"
-
-[node name="CloudPurchase" type="Button" parent="."]
-layout_mode = 2
-offset_left = 689.0
-offset_top = 93.0
-offset_right = 1002.0
-offset_bottom = 165.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Purchase Cloud"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

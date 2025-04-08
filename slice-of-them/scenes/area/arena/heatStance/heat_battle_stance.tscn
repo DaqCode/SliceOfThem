@@ -1,23 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://cv883t3tcdq1s"]
 
-[ext_resource type="Texture2D" uid="uid://cox270u5qbwtd" path="res://art/clouds/DroopyCloud.png" id="1_dd0bg"]
 [ext_resource type="Script" uid="uid://c2ronq0uqher1" path="res://scenes/area/arena/heatStance/heat_battle_stance.gd" id="1_lc6jx"]
 [ext_resource type="Texture2D" uid="uid://c3eqma71qq3di" path="res://art/characters/mainCharacter/heatSit.png" id="2_lc6jx"]
+[ext_resource type="PackedScene" uid="uid://d3gwkefc2ec1l" path="res://resources/clouds/cloudType/droopy_cloud.tscn" id="2_o01nu"]
 [ext_resource type="PackedScene" uid="uid://ueoulx8dpkno" path="res://resources/sword/swordType/wooden_sword.tscn" id="3_o01nu"]
 
 [node name="heatBattleStance" type="Node2D"]
 script = ExtResource("1_lc6jx")
 
-[node name="DroopyCloud" type="Sprite2D" parent="."]
-position = Vector2(-13, 84)
-texture = ExtResource("1_dd0bg")
+[node name="DroopyCloud" parent="." instance=ExtResource("2_o01nu")]
+position = Vector2(-15, 78)
+
+[node name="WoodenSword" parent="." instance=ExtResource("3_o01nu")]
+position = Vector2(113, 52)
 
 [node name="Heat" type="Sprite2D" parent="."]
 scale = Vector2(0.575, 0.575)
 texture = ExtResource("2_lc6jx")
-
-[node name="WoodenSword" parent="." instance=ExtResource("3_o01nu")]
-position = Vector2(139, 44)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -198.0
@@ -28,3 +27,24 @@ max_value = 10.0
 step = 1.0
 value = 10.0
 show_percentage = false
+
+[node name="HealthText" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.5
+offset_top = -15.5
+offset_right = 100.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -12,6 +12,7 @@ func _ready() -> void:
 	# Defend
 	$Fight.connect("mouse_entered", Callable(self, "_on_DefendButton_mouse_entered"))
 	$Fight.connect("mouse_exited", Callable(self, "_on_DefendButton_mouse_exited"))
+	$Fight.connect("pressed", Callable(self, "_on_DefendButton_clicked"))
 
 	# Library
 	$Credits.connect("mouse_entered", Callable(self, "_on_LibraryButton_mouse_entered"))
@@ -49,6 +50,9 @@ func _on_DefendButton_mouse_entered() -> void:
 
 func _on_DefendButton_mouse_exited() -> void:
 	$Fight.theme = THEME_NORMAL
+
+func _on_DefendButton_clicked() -> void:
+	get_tree().change_scene_to_file("res://scenes/area/arena/arenaSelect.tscn")
 
 
 # Library Button

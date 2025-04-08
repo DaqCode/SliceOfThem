@@ -67,6 +67,7 @@ layout_mode = 2
 battle_id = 10
 
 [node name="ArenaSelect2" type="GridContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 232.0
 offset_right = 1153.0
@@ -117,6 +118,7 @@ layout_mode = 2
 battle_id = 20
 
 [node name="ArenaSelect3" type="GridContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 307.0
 offset_right = 1153.0
