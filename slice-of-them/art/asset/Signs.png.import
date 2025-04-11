@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3l77xf5gysyv"
-path="res://.godot/imported/Sand.png-b3546ed8c5b07811983088e318d0806b.ctex"
+uid="uid://dvl7q4o2reu2a"
+path="res://.godot/imported/Signs.png-bda10d56b71180a0cbb47d015f8d37f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/skills/Sand.png"
-dest_files=["res://.godot/imported/Sand.png-b3546ed8c5b07811983088e318d0806b.ctex"]
+source_file="res://art/asset/Signs.png"
+dest_files=["res://.godot/imported/Signs.png-bda10d56b71180a0cbb47d015f8d37f1.ctex"]
 
 [params]
 

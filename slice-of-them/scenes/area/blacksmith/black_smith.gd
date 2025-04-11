@@ -8,7 +8,7 @@ var base_cloud_cost = 10
 var base_potion_cost = 5  # Potions start cheaper
 
 # Scaling factor
-var scaling_rate = 1.35
+var scaling_rate = 4.75
 
 # Purchase counts
 var sword_purchases = 0
@@ -48,7 +48,6 @@ var cloud_paths = {
 
 
 func _ready() -> void:
-
 	print("Animation Player:", animation_player)
 
 	$Map.connect("pressed", Callable(self, "_on_Map_Clicked"))
@@ -60,7 +59,6 @@ func _ready() -> void:
 	# Purchase sword and cloud upgrades perma
 	update_sword_offer()
 	update_cloud_offer()
-
 
 	# Cloud tween keep
 	cloud_origin_position = cloud_image.position
@@ -94,8 +92,8 @@ func _ready() -> void:
 	$UseItems/LuckPotion.connect("mouse_entered", Callable(self, "_on_luck_mouse_entered"))
 	$UseItems/LuckPotion.connect("mouse_exited", Callable(self, "_on_luck_mouse_exited"))
 
-	$UseItems/DarknessPotion.connect("mouse_entered", Callable(self, "_on_dark_mouse_entered"))
-	$UseItems/DarknessPotion.connect("mouse_exited", Callable(self, "_on_dark_mouse_exited"))
+	$DarknessPotion.connect("mouse_entered", Callable(self, "_on_dark_mouse_entered"))
+	$DarknessPotion.connect("mouse_exited", Callable(self, "_on_dark_mouse_exited"))
 
 	# Create connect signals to connect pressed because i realized too late.
 	$Sword/SwordPurchase.connect("pressed", Callable(self, "_on_sword_pressed"))
@@ -106,13 +104,27 @@ func _ready() -> void:
 	$UseItems/SpeedPotion.connect("pressed", Callable(self, "_on_speed_pressed"))
 	$UseItems/RefreshPotion.connect("pressed", Callable(self, "_on_refresh_pressed"))
 	$UseItems/LuckPotion.connect("pressed", Callable(self, "_on_luck_pressed"))
-	$UseItems/DarknessPotion.connect("pressed", Callable(self, "_on_dark_pressed"))
+	$DarknessPotion.connect("pressed", Callable(self, "_on_dark_pressed"))
 
+	
+	# Update the amount of potions the player has below the potion buying part
+	update_potion_amount_inventory()
+####################
+#Mental note to self
+# Split each of the potions to 3
+# Darkness potion is to only be unlocked after certain criterias, and also maek it so that it's basically going to be uhhhhhhhhhhh whats the word
+# Make it unlocked unil specific certiera is met.
+# Make it maybe available after you fix up Glotch and his bridge. 
+
+# Shit, you know what, maybe make the storyline for the bridge glotch's story.
 
 
 # Function to calculate item cost based on purchases
 func get_cost(base_price: float, num_purchases: int) -> int:
 	return int(base_price * pow(scaling_rate, num_purchases))
+
+func get_potion_cost(potion_cost_initial: int, how_many_purchase_potion: int) -> int:
+	return potion_cost_initial * (how_many_purchase_potion*1.186)
 
 func update_sword_offer():
 	var next_upgrade = GlobalPlayerStats.sword_upgrade_number + 1
@@ -147,9 +159,9 @@ func update_sword_offer():
 		# Disable the button when max level is reached
 		$Sword/SwordPurchase.disabled = true
 	else:
-		sword_name_label.text = sword_names[next_upgrade]
+		sword_name_label.text = "Upgrade to " + sword_names[next_upgrade]
 		var cost = get_cost(base_weapon_cost, sword_purchases)
-		sword_cost_label.text = str(cost) + " 🪙"
+		sword_cost_label.text = "Price: " + str(cost) + " 🪙"
 		# Enable the button if not at max level
 		$Sword/SwordPurchase.disabled = false
 
@@ -185,9 +197,9 @@ func update_cloud_offer():
 		cloud_cost_label.text = "—"
 		$Cloud/CloudPurchase.disabled = true  
 	else:
-		cloud_name_label.text = cloud_names[next_upgrade]
+		cloud_name_label.text = "Upgrade to " + cloud_names[next_upgrade]
 		var cost = get_cost(base_cloud_cost, cloud_purchases)
-		cloud_cost_label.text = str(cost) + " 🪙"
+		cloud_cost_label.text = "Price: " + str(cost) + " 🪙"
 		$Cloud/CloudPurchase.disabled = false  
 
 # Function to purchase a sword
@@ -212,11 +224,65 @@ func purchase_cloud() -> void:
 		update_cloud_offer()
 
 # Function to purchase a potion
-func purchase_potion() -> void:
-	var cost = get_cost(base_potion_cost, potion_purchases)
+func purchase_potion(potion_type: String) -> void:
+	var cost = get_potion_cost(base_potion_cost, potion_purchases)
+
+	match potion_type:
+			"heal":
+				if GlobalPlayerStats.how_many_health == 3:
+					$UseItems/HealPoion.disabled = true
+					print("You went over the limit. You now have a lot of potions. How many? %d" %GlobalPlayerStats.how_many_health)
+					return
+			"strength":
+				if GlobalPlayerStats.how_many_strenght == 3:
+					$UseItems/StrengthPotion.disabled = true
+					print("You went over the limit. You now have a lot of potions. How many? %d" %GlobalPlayerStats.how_many_strenght)
+					return
+			"flame":
+				if GlobalPlayerStats.how_many_flame == 3:
+					$UseItems/FlamePotion.disabled = true
+					print("You went over the limit. You now have a lot of potions. How many? %d" %GlobalPlayerStats.how_many_flame)
+					return
+			"speed":
+				if GlobalPlayerStats.how_many_speed == 3:
+					$UseItems/SpeedPotion.disabled = true
+					print("You went over the limit. You now have a lot of potions. How many? %d" %GlobalPlayerStats.how_many_speed)
+					return
+			"refresh":
+				if GlobalPlayerStats.how_many_refresh == 3:
+					$UseItems/RefreshPotion.disabled = true
+					print("You went over the limit. You now have a lot of potions. How many? %d" %GlobalPlayerStats.how_many_refresh)
+					return
+			"luck":
+				if GlobalPlayerStats.how_many_luck == 3:
+					$UseItems/LuckPotion.disabled = true
+					print("You went over the limit. You now have a lot of potions. How many? %d" %GlobalPlayerStats.how_many_luck)
+					return
+			"dark":
+				if GlobalPlayerStats.how_many_darkness == 1:
+					$DarknessPotion.disabled = true
+					print("You went over the limit. You now have a lot of potions. How many? %d" %GlobalPlayerStats.how_many_darkness)
+					return
+
 	if can_afford(cost):
 		GlobalPlayerStats.coins -= cost
 		potion_purchases += 1
+		match potion_type:
+			"heal":
+				GlobalPlayerStats.how_many_health +=1
+			"strength":
+				GlobalPlayerStats.how_many_strenght +=1
+			"flame":
+				GlobalPlayerStats.how_many_flame +=1
+			"speed":
+				GlobalPlayerStats.how_many_speed +=1
+			"refresh":
+				GlobalPlayerStats.how_many_refresh +=1
+			"luck":
+				GlobalPlayerStats.how_many_luck +=1
+			"dark":
+				GlobalPlayerStats.how_many_darkness +=1
+		update_potion_amount_inventory()
 		print("Purchased Potion! New Cost:", get_cost(base_potion_cost, potion_purchases))
 
 func can_afford(cost: int) -> bool:
@@ -226,7 +292,6 @@ func _on_Map_Clicked() -> void:
 	get_tree().change_scene_to_file("res://scenes/area/maps/map_direction.tscn")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	print("Animation finished:", anim_name)  # Debugging line
 	if anim_name == "Hammar":  # Ensure the name matches exactly
 		var maybeSpin := randi_range(1, 100)
 		if maybeSpin == 100:
@@ -289,24 +354,27 @@ var refresh_texture: Texture2D = preload("res://art/drinkable/ReturnPotion.png")
 var luck_texture: Texture2D = preload("res://art/drinkable/LuckPotion.png")
 var darkness_texture: Texture2D = preload("res://art/drinkable/DarknessPotion.png")
 
-
-
+# The check to make sure that the bug doesn't appear  with the cloud appearing.
+var have_you_been_hovering: bool = false
+var is_cloud_already_visible: bool = false
 
 # Potion button event functions.
 func _on_heal_mouse_entered() -> void:
 	the_entire_stats.show_cloud(heal_texture, "Potion of Heal", "Heals player for 25% of their health.")
 
-func _on_heal_mouse_exited() -> void:
-	the_entire_stats.hide_cloud()
+func _on_heal_mouse_exited() -> void:	
+		the_entire_stats.hide_cloud()
 
 func _on_strength_mouse_entered() -> void:
+	have_you_been_hovering = true
+
 	the_entire_stats.show_cloud(strength_texture, "Potion of Strength", "Strengthens player for 2 turns to do x1.5 damage.")
 
 func _on_strength_mouse_exited() -> void:
 	the_entire_stats.hide_cloud()
 
 func _on_flame_mouse_entered() -> void:
-	the_entire_stats.show_cloud(flame_texture, "Potion of Fire", "Burns enemy. When burned, enemy will take 10% of their healthevery turn.")
+	the_entire_stats.show_cloud(flame_texture, "Potion of Fire", "Burns enemy. When burned, enemy will take 10% of their health every turn.")
 
 func _on_flame_mouse_exited() -> void:
 	the_entire_stats.hide_cloud()
@@ -337,28 +405,61 @@ func _on_dark_mouse_exited() -> void:
 
 func _on_heal_pressed() -> void:
 	print("Purchased Heal Potion")
-	purchase_potion()
+	purchase_potion("heal")
 
 func _on_strength_pressed() -> void:
 	print("Purchased Strength Potion")
-	purchase_potion()
+	purchase_potion("strength")
 
 func _on_flame_pressed() -> void:
 	print("Purchased Flame Potion")
-	purchase_potion()
+	purchase_potion("flame")
 
 func _on_speed_pressed() -> void:
 	print("Purchased Speed Potion")
-	purchase_potion()
+	purchase_potion("speed")
 
 func _on_refresh_pressed() -> void:
 	print("Purchased Refresh Potion")
-	purchase_potion()
+	purchase_potion("refresh")
 
 func _on_luck_pressed() -> void:
 	print("Purchased Luck Potion")
-	purchase_potion()
+	purchase_potion("luck")
 
 func _on_dark_pressed() -> void:
 	print("Purchased Darkness Potion")
-	purchase_potion()
+	purchase_potion("dark")
+
+func check_for_being_hovered() -> void:
+	pass
+
+# Start by getting the ffunctions hovering.
+# Then it should set the function true, else it is false. trigger the timer to start.
+# If hovering is de-activated and immediately turned onto the hover to some other, whilst the timmer is still on, simply update the cloud text.
+
+func update_potion_amount_inventory() -> void:
+	for potion in $UseItems.get_children():
+		for child in potion.get_children():
+			if child.name.begins_with("AmountInInventory") and child is Label:
+				match child.name:
+					"AmountInInventory1":
+						$UseItems/HealPoion/AmountInInventory1.text = str(GlobalPlayerStats.how_many_health)
+					"AmountInInvenotry2":
+						$UseItems/StrengthPotion/AmountInInventory2.text = str(GlobalPlayerStats.how_many_strenght)
+					"AmountInInventory3":
+						$UseItems/FlamePotion/AmountInInventory3.text = str(GlobalPlayerStats.how_many_flame)
+					"AmountInInventory4":
+						$UseItems/SpeedPotion/AmountInInventory4.text = str(GlobalPlayerStats.how_many_speed)
+					"AmountInInventory5":
+						$UseItems/RefreshPotion/AmountInInventory5.text = str(GlobalPlayerStats.how_many_refresh)
+					"AmountInInventory6":
+						$UseItems/LuckPotion/AmountInInventory6.text = str(GlobalPlayerStats.how_many_luck)
+					"AmountInInventory7":
+						$DarknessPotion/AmountInInventory7.text = str(GlobalPlayerStats.how_many_darkness)
+					_:
+						print("What in the hell did you manage to get to do to get this damn print statement.")
+
+func update_if_you_can_even_afford_item () -> void:
+
+	#Seems to be updating even if you press it. Disable he button if you cant even buy it in the first plcae.

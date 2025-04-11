@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5cmowbtrm3cq"]
+
+[ext_resource type="Script" uid="uid://ct0b41liljcb5" path="res://global/coin_counter.gd" id="1_8u6v6"]
+[ext_resource type="Texture2D" uid="uid://bgjh4bx21b1ym" path="res://art/asset/CoinBag.png" id="1_062gn"]
+
+[node name="CoinCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8u6v6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -95.0
+offset_right = 173.0
+offset_bottom = -5.0
+grow_vertical = 0
+
+[node name="ActualBackground" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="Panel/ActualBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -11.5
+offset_right = 45.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ActualBackground"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -36.0
+offset_right = 600.0
+offset_bottom = 564.0
+grow_vertical = 2
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("1_062gn")

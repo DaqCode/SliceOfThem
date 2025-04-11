@@ -9,8 +9,7 @@ signal stats_updated  # Signal to notify when stats are updated
 @export var crit_stat: int = 1
 @export var agility_stat: int = 1
 
-@export var coins: int = 0
-
+@export var coins: int = 100000
 
 @export var sword_upgrade_number: int = 0
 # Sword Upgrades
@@ -40,6 +39,14 @@ signal stats_updated  # Signal to notify when stats are updated
 # 8: Stardrop Cloud
 # 9: Neutron Cloud
 # 10: Staerie’s Resting Cloud (Final Cloud Upgrade)
+
+@export var how_many_health: int = 0
+@export var how_many_strenght: int = 0
+@export var how_many_flame: int = 0
+@export var how_many_speed: int = 0
+@export var how_many_refresh: int = 0
+@export var how_many_luck: int = 0
+@export var how_many_darkness: int = 0
 
 
 # Derived stats (calculated via formulas)

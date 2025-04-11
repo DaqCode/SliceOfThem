@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dqo0rt1qi4rw4"]
+[gd_scene load_steps=53 format=3 uid="uid://dqo0rt1qi4rw4"]
 
 [ext_resource type="Texture2D" uid="uid://23fafmj4wouq" path="res://aniations/Staerie/5_3_1_frame0000.png.adcc5e17-1602-408c-92cb-348cdca45925.png" id="1_40ifw"]
 [ext_resource type="Script" uid="uid://cr1nibu7pbyy5" path="res://scenes/area/bridgeRepair/bridge.gd" id="1_hw5fe"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://b1lldqt0bi7h7" path="res://aniations/misc/bridgeConstruction/1_1_1_frame0020.png.aadf6134-da31-4972-8a9e-8b0f2df8bf1e.png" id="38_xfp04"]
 [ext_resource type="Texture2D" uid="uid://bp5rbp7uy0rvg" path="res://aniations/misc/bridgeConstruction/1_2_1_frame0021.png.24aff6bb-b540-45c8-9979-d625ad237d89.png" id="39_p6auj"]
 [ext_resource type="Texture2D" uid="uid://bqcv7vut43gg1" path="res://aniations/misc/bridgeConstruction/4_5_1_frame0009.png.94f5645c-d980-4e24-ab9e-3c831158eacb.png" id="40_4bna7"]
+[ext_resource type="PackedScene" uid="uid://b5cmowbtrm3cq" path="res://global/coin_counter.tscn" id="42_ix4hc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1a1ed"]
 animations = [{
@@ -523,3 +524,8 @@ autoplay = "StaerieIdle"
 stream = ExtResource("14_a42x8")
 volume_db = -7.5
 autoplay = true
+
+[node name="CoinCounter" parent="." instance=ExtResource("42_ix4hc")]
+layout_mode = 1
+
+[connection signal="pressed" from="Upgrade" to="." method="_on_upgrade_pressed"]

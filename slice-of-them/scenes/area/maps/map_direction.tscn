@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://rb71hfq6sg4y"]
+[gd_scene load_steps=6 format=3 uid="uid://rb71hfq6sg4y"]
 
 [ext_resource type="Script" uid="uid://b5uqba8eul25r" path="res://scenes/area/maps/map_direction.gd" id="1_4malm"]
 [ext_resource type="Texture2D" uid="uid://cyfpv4nuh8lco" path="res://art/background/MapPicture.png" id="1_whunq"]
 [ext_resource type="Texture2D" uid="uid://c3eqma71qq3di" path="res://art/characters/mainCharacter/heatSit.png" id="2_gg2ru"]
 [ext_resource type="Theme" uid="uid://b1sr6ihqwtgyv" path="res://resources/Textures/UIPurpose/MapMenuThemeNormal.tres" id="2_h6iwt"]
+[ext_resource type="PackedScene" uid="uid://b5cmowbtrm3cq" path="res://global/coin_counter.tscn" id="5_0e2s6"]
 
 [node name="MapDirection" type="Control"]
 layout_mode = 3
@@ -102,3 +103,6 @@ icon = ExtResource("2_gg2ru")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="CoinCounter" parent="." instance=ExtResource("5_0e2s6")]
+layout_mode = 1

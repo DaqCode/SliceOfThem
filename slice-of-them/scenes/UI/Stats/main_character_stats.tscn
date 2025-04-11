@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3eqma71qq3di" path="res://art/characters/mainCharacter/heatSit.png" id="2_fvfs3"]
 [ext_resource type="Theme" uid="uid://carm5ka8me2pc" path="res://resources/Textures/Objects/ItemButton.tres" id="3_64fdn"]
 [ext_resource type="Texture2D" uid="uid://cld44matr7xjm" path="res://art/skills/PoisonBottle.png" id="3_i7hgh"]
-[ext_resource type="Texture2D" uid="uid://bd7mc53sn3yp3" path="res://art/skills/Sand.png" id="5_d0nbj"]
+[ext_resource type="Texture2D" uid="uid://b3l77xf5gysyv" path="res://art/skills/Sand.png" id="5_d0nbj"]
 [ext_resource type="Texture2D" uid="uid://b5u2da2cu5l6j" path="res://art/skills/Wind.png" id="6_0byus"]
 [ext_resource type="Texture2D" uid="uid://dhmkejbvirj5h" path="res://art/skills/spikes.png" id="7_okh8v"]
 [ext_resource type="Texture2D" uid="uid://c2otvkfg61wnh" path="res://art/skills/Smoke.png" id="8_h5cwl"]
@@ -611,6 +611,20 @@ offset_top = 559.0
 offset_right = 719.0
 offset_bottom = 627.0
 text = "Exit"
+
+[node name="CloudSpriteUpdate" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 485.0
+offset_top = 334.0
+offset_right = 525.0
+offset_bottom = 374.0
+
+[node name="SwordSpriteUpdate" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 485.0
+offset_top = 334.0
+offset_right = 525.0
+offset_bottom = 374.0
 
 [connection signal="mouse_entered" from="StatContainer/CharStats/5StatsContain/Health" to="." method="_on_health_mouse_entered"]
 [connection signal="pressed" from="StatContainer/CharStats/5StatsContain/Health" to="." method="_on_health_pressed"]

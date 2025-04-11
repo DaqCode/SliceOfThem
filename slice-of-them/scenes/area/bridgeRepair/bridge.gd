@@ -37,7 +37,7 @@ func on_move_timer_timeout() -> void:
 	await get_tree().create_timer(15.5).timeout
 	_ready() 
 
-func _on_BridgeButton_clicked() -> void:
+func _on_upgrade_pressed() -> void:
 	# Cost formula
 	var upgrade_cost = 5000 * (bridgeprogressCounter + 1) * (bridgeprogressCounter + 1)
 	

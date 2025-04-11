@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3l77xf5gysyv"
-path="res://.godot/imported/Sand.png-b3546ed8c5b07811983088e318d0806b.ctex"
+uid="uid://bgjh4bx21b1ym"
+path="res://.godot/imported/CoinBag.png-8c1eec8bc9698b7f956627c35a42b807.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/skills/Sand.png"
-dest_files=["res://.godot/imported/Sand.png-b3546ed8c5b07811983088e318d0806b.ctex"]
+source_file="res://art/asset/CoinBag.png"
+dest_files=["res://.godot/imported/CoinBag.png-8c1eec8bc9698b7f956627c35a42b807.ctex"]
 
 [params]
 
