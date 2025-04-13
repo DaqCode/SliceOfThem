@@ -5,7 +5,10 @@ extends Control
 # Base prices
 var base_weapon_cost = 10
 var base_cloud_cost = 10
-var base_potion_cost = 5  # Potions start cheaper
+var base_potion_cost = 10  # Potions start cheaper
+
+# Remember that his needs to be tracked by a global, because otherwise, tis always gonna start at 10 and forever just stay cheap :P
+var current_potion_costs : int = 10
 
 # Scaling factor
 var scaling_rate = 4.75
@@ -34,20 +37,25 @@ var cloud_origin_position: Vector2
 var cloud_origin_scale: Vector2
 var sword_base_modulate: Color
 
-# Preloads for the swords and clouds
+# More checks for whatever i dunno :|
+var is_mouse_inside: bool
 
+# Voice lines for Gaze
+var voice_sample: Array = [
+	preload("res://art/sounds/voiceLines/hello1.mp3"),
+	preload("res://art/sounds/voiceLines/hello2.mp3"),
+	preload("res://art/sounds/voiceLines/hello3.mp3")
 
-# Clouds
-var cloud_paths = {
-	"DroopyCloud": "res://clouds/DroopyCloud.png",
-	"FluffierCloud": "res://clouds/FluffierCloud.png",
-	"FluffyCloud": "res://clouds/FluffyCloud.png",
-	"NimbusCloud": "res://clouds/NimbusCloud.png",
-	"PillowCloud": "res://clouds/PillowCloud.png"
-}
-
+]
 
 func _ready() -> void:
+	$WelkomeIn.stream = voice_sample[randi_range(0,2)]
+	if ($WelkomeIn.stream == voice_sample[2]):
+		$WelkomeIn.volume_db = -5
+		$WelkomeIn.play()
+	else:
+		$WelkomeIn.volume_db = -12.5
+		$WelkomeIn.play()
 	print("Animation Player:", animation_player)
 
 	$Map.connect("pressed", Callable(self, "_on_Map_Clicked"))
@@ -60,6 +68,7 @@ func _ready() -> void:
 	update_sword_offer()
 	update_cloud_offer()
 
+	$Signs/SignCost.text = str(current_potion_costs)
 	# Cloud tween keep
 	cloud_origin_position = cloud_image.position
 	cloud_origin_scale = cloud_image.scale
@@ -74,6 +83,7 @@ func _ready() -> void:
 
 
 	# Create the signals for mouse entered and mouse exited for all the buttons.
+
 	$UseItems/HealPoion.connect("mouse_entered", Callable(self, "_on_heal_mouse_entered"))
 	$UseItems/HealPoion.connect("mouse_exited", Callable(self, "_on_heal_mouse_exited"))
 
@@ -124,7 +134,7 @@ func get_cost(base_price: float, num_purchases: int) -> int:
 	return int(base_price * pow(scaling_rate, num_purchases))
 
 func get_potion_cost(potion_cost_initial: int, how_many_purchase_potion: int) -> int:
-	return potion_cost_initial * (how_many_purchase_potion*1.186)
+	return int(potion_cost_initial * pow(1.08, how_many_purchase_potion))
 
 func update_sword_offer():
 	var next_upgrade = GlobalPlayerStats.sword_upgrade_number + 1
@@ -226,7 +236,8 @@ func purchase_cloud() -> void:
 # Function to purchase a potion
 func purchase_potion(potion_type: String) -> void:
 	var cost = get_potion_cost(base_potion_cost, potion_purchases)
-
+	current_potion_costs = cost
+	$Signs/SignCost.text = str(current_potion_costs)
 	match potion_type:
 			"heal":
 				if GlobalPlayerStats.how_many_health == 3:
@@ -259,10 +270,12 @@ func purchase_potion(potion_type: String) -> void:
 					print("You went over the limit. You now have a lot of potions. How many? %d" %GlobalPlayerStats.how_many_luck)
 					return
 			"dark":
-				if GlobalPlayerStats.how_many_darkness == 1:
+				if GlobalPlayerStats.how_many_darkness == 2:
 					$DarknessPotion.disabled = true
 					print("You went over the limit. You now have a lot of potions. How many? %d" %GlobalPlayerStats.how_many_darkness)
 					return
+			_:
+				print("Lol no.")
 
 	if can_afford(cost):
 		GlobalPlayerStats.coins -= cost
@@ -282,8 +295,10 @@ func purchase_potion(potion_type: String) -> void:
 				GlobalPlayerStats.how_many_luck +=1
 			"dark":
 				GlobalPlayerStats.how_many_darkness +=1
+			_:
+				print("Lol no.")
 		update_potion_amount_inventory()
-		print("Purchased Potion! New Cost:", get_cost(base_potion_cost, potion_purchases))
+		print("Purchased Potion! New Cost:", cost)
 
 func can_afford(cost: int) -> bool:
 	return GlobalPlayerStats.coins >= cost
@@ -434,10 +449,6 @@ func _on_dark_pressed() -> void:
 func check_for_being_hovered() -> void:
 	pass
 
-# Start by getting the ffunctions hovering.
-# Then it should set the function true, else it is false. trigger the timer to start.
-# If hovering is de-activated and immediately turned onto the hover to some other, whilst the timmer is still on, simply update the cloud text.
-
 func update_potion_amount_inventory() -> void:
 	for potion in $UseItems.get_children():
 		for child in potion.get_children():
@@ -445,7 +456,7 @@ func update_potion_amount_inventory() -> void:
 				match child.name:
 					"AmountInInventory1":
 						$UseItems/HealPoion/AmountInInventory1.text = str(GlobalPlayerStats.how_many_health)
-					"AmountInInvenotry2":
+					"AmountInInventory2":
 						$UseItems/StrengthPotion/AmountInInventory2.text = str(GlobalPlayerStats.how_many_strenght)
 					"AmountInInventory3":
 						$UseItems/FlamePotion/AmountInInventory3.text = str(GlobalPlayerStats.how_many_flame)
@@ -461,5 +472,21 @@ func update_potion_amount_inventory() -> void:
 						print("What in the hell did you manage to get to do to get this damn print statement.")
 
 func update_if_you_can_even_afford_item () -> void:
-
+	pass
 	#Seems to be updating even if you press it. Disable he button if you cant even buy it in the first plcae.
+
+##############################################################################################################################
+# For the funny goofy click.
+
+func _input(event: InputEvent) -> void:
+	if is_mouse_inside and event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			get_tree().change_scene_to_file("res://scenes/area/blacksmith/why_did_you_touch.tscn")
+
+
+func _on_hammer_no_touch_area_mouse_entered() -> void:
+	is_mouse_inside = true
+
+func _on_hammer_no_touch_area_mouse_exited() -> void:
+	is_mouse_inside = false
+

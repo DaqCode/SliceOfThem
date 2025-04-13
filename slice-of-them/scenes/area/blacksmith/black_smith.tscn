@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bjjtx24302mpi"]
+[gd_scene load_steps=35 format=3 uid="uid://bjjtx24302mpi"]
 
 [ext_resource type="Script" uid="uid://drli7g8kouc5m" path="res://scenes/area/blacksmith/black_smith.gd" id="1_dn51w"]
 [ext_resource type="Texture2D" uid="uid://yx7gw0ihc1y8" path="res://art/background/blacksmith/BlacksmithBackground.png" id="2_f7ad2"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dsxtxr6fv3dam" path="res://art/drinkable/DarknessPotion.png" id="13_abh1q"]
 [ext_resource type="Texture2D" uid="uid://c3xwyj5m3pv1f" path="res://art/asset/table..png" id="18_jfkgc"]
 [ext_resource type="Texture2D" uid="uid://dvl7q4o2reu2a" path="res://art/asset/Signs.png" id="19_sruxi"]
+[ext_resource type="PackedScene" uid="uid://b5cmowbtrm3cq" path="res://global/coin_counter.tscn" id="20_rl3jy"]
 
 [sub_resource type="Gradient" id="Gradient_gpcf2"]
 offsets = PackedFloat32Array(0.604651, 0.996124)
@@ -39,6 +40,10 @@ scale_min = 3.0
 scale_max = 4.0
 color = Color(1, 0.976807, 0.851563, 1)
 color_ramp = SubResource("GradientTexture1D_e6hc8")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sruxi"]
+radius = 69.3577
+height = 231.681
 
 [sub_resource type="Gradient" id="Gradient_e6hc8"]
 offsets = PackedFloat32Array(0, 0.620155, 0.806202, 0.903101, 1)
@@ -80,42 +85,43 @@ collision_bounce = 0.0
 
 [sub_resource type="Animation" id="Animation_ur6wl"]
 resource_name = "Hammar"
-length = 1.75
+length = 1.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GizoHammer:position")
+tracks/0/path = NodePath("Frequent:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 1.06667, 1.13333, 1.36667, 1.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1076, 354), Vector2(1107, 319), Vector2(1107, 319), Vector2(953, 366), Vector2(953, 366), Vector2(1076, 354)]
+"times": PackedFloat32Array(0, 0.666667, 1.08362),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GizoHammer:rotation")
+tracks/1/path = NodePath("GizoHammer:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.23, 1.1, 1.13333, 1.36667, 1.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.62, 0.666667, 1.10647),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.916298, 0.916298, -1.91463, -1.91463, 0.0]
+"values": [Vector2(857, 140), Vector2(869, 146), Vector2(869, 146), Vector2(798, 162), Vector2(798, 162)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Frequent:emitting")
+tracks/2/path = NodePath("GizoHammer:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.11638, 1.75),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
+"times": PackedFloat32Array(0, 0.36, 0.593333, 0.686667, 1.12647),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.95477, 1.95477, -1.83434, -1.83434]
 }
 
 [sub_resource type="Animation" id="Animation_nha4e"]
@@ -460,10 +466,10 @@ vertical_alignment = 1
 
 [node name="DarknessPotion" type="Button" parent="."]
 layout_mode = 2
-offset_left = 901.0
-offset_top = 245.0
-offset_right = 1008.0
-offset_bottom = 444.0
+offset_left = 881.0
+offset_top = 225.0
+offset_right = 988.0
+offset_bottom = 424.0
 scale = Vector2(0.545, 0.545)
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -521,53 +527,47 @@ vertical_alignment = 1
 [node name="Cloud" type="Node" parent="."]
 
 [node name="CloudImage" type="TextureRect" parent="Cloud"]
-offset_left = 407.0
+offset_left = 172.758
 offset_top = -110.0
-offset_right = 937.002
+offset_right = 702.76
 offset_bottom = 420.0
 scale = Vector2(0.555, 0.555)
 pivot_offset = Vector2(272.455, 255.926)
 texture = ExtResource("7_nha4e")
 
 [node name="CloudPurchase" type="Button" parent="Cloud"]
-offset_left = 533.0
+offset_left = 298.758
 offset_top = 14.0
-offset_right = 795.0
+offset_right = 560.758
 offset_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("5_ur6wl")
 
 [node name="CloudPrice" type="Label" parent="Cloud"]
-offset_left = 593.0
+offset_left = 358.758
 offset_top = 45.887
-offset_right = 754.002
+offset_right = 519.76
 offset_bottom = 68.887
 text = "Price: 2.01M+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ShowThePotionFloat" parent="." instance=ExtResource("8_nha4e")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 220.0
-offset_top = 158.0
-offset_right = 1220.0
-offset_bottom = 758.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="GizoHammer" type="Sprite2D" parent="."]
+[node name="GizoHammer" type="TextureRect" parent="."]
 z_index = 1
-position = Vector2(1047, 351)
+layout_mode = 0
+offset_left = 1047.0
+offset_top = 351.0
+offset_right = 1467.0
+offset_bottom = 771.0
 rotation = 2.99673
 scale = Vector2(0.365, 0.365)
+pivot_offset = Vector2(212.598, 205.479)
+mouse_filter = 2
 texture = ExtResource("4_gpcf2")
 
 [node name="HammerWEEEE" type="GPUParticles2D" parent="GizoHammer"]
-position = Vector2(-8.21918, -115.068)
+position = Vector2(216.365, 205.994)
 emitting = false
 amount = 90
 preprocess = 0.4
@@ -575,8 +575,15 @@ explosiveness = 0.25
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ur6wl")
 
+[node name="HammerNoTouchArea" type="Area2D" parent="GizoHammer"]
+position = Vector2(209.419, 196.674)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GizoHammer/HammerNoTouchArea"]
+position = Vector2(7.73759, 3.89752)
+shape = SubResource("CapsuleShape2D_sruxi")
+
 [node name="Particles" type="GPUParticles2D" parent="."]
-position = Vector2(921, 427)
+position = Vector2(968, 424)
 emitting = false
 amount = 100
 lifetime = 6.0
@@ -590,7 +597,7 @@ trail_section_subdivisions = 50
 process_material = SubResource("ParticleProcessMaterial_awjlb")
 
 [node name="Frequent" type="GPUParticles2D" parent="."]
-position = Vector2(921, 427)
+position = Vector2(965, 441)
 emitting = false
 amount = 75
 amount_ratio = 0.6879
@@ -614,31 +621,79 @@ libraries = {
 autoplay = "GazeFloat"
 
 [node name="Table_" type="Sprite2D" parent="."]
-position = Vector2(315, 498)
+position = Vector2(298, 498)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("18_jfkgc")
 
 [node name="Table_2" type="Sprite2D" parent="."]
-position = Vector2(487, 498)
+position = Vector2(470, 498)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("18_jfkgc")
 
 [node name="Table_3" type="Sprite2D" parent="."]
-position = Vector2(662, 498)
+position = Vector2(645, 498)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("18_jfkgc")
 
 [node name="Signs" type="Sprite2D" parent="."]
-position = Vector2(485, 582)
+position = Vector2(468, 582)
 scale = Vector2(0.365, 0.365)
 texture = ExtResource("19_sruxi")
 
 [node name="Label" type="Label" parent="Signs"]
-offset_left = -98.6302
-offset_top = -38.3562
-offset_right = 82.3698
-offset_bottom = -0.356163
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -446.5
+offset_top = -338.356
+offset_right = -153.5
+offset_bottom = -300.356
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("5_ur6wl")
-text = "Price for each"
+text = "Next cost for potion:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
+[node name="SignCost" type="Label" parent="Signs"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -538.0
+offset_top = -297.26
+offset_right = -62.0
+offset_bottom = -233.26
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_ur6wl")
+theme_override_font_sizes/font_size = 48
+text = "3000000000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WelkomeIn" type="AudioStreamPlayer" parent="."]
+volume_db = -12.5
+
+[node name="ShowThePotionFloat" parent="." instance=ExtResource("8_nha4e")]
+z_index = 2
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 220.0
+offset_top = 158.0
+offset_right = 1220.0
+offset_bottom = 758.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CoinCounter" parent="." instance=ExtResource("20_rl3jy")]
+layout_mode = 1
+
+[connection signal="mouse_entered" from="GizoHammer/HammerNoTouchArea" to="." method="_on_hammer_no_touch_area_mouse_entered"]
+[connection signal="mouse_exited" from="GizoHammer/HammerNoTouchArea" to="." method="_on_hammer_no_touch_area_mouse_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

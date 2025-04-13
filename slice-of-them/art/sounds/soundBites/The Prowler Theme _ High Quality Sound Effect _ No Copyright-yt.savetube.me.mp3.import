@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dymqmykuoysk5"
+path="res://.godot/imported/The Prowler Theme _ High Quality Sound Effect _ No Copyright-yt.savetube.me.mp3-4d4126591018e79e28913ce9f05e9af6.mp3str"
+
+[deps]
+
+source_file="res://art/sounds/soundBites/The Prowler Theme _ High Quality Sound Effect _ No Copyright-yt.savetube.me.mp3"
+dest_files=["res://.godot/imported/The Prowler Theme _ High Quality Sound Effect _ No Copyright-yt.savetube.me.mp3-4d4126591018e79e28913ce9f05e9af6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

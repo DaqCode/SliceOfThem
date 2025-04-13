@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b125ofowei743"]
+
+[ext_resource type="AudioStream" uid="uid://b5kn53j5ab77u" path="res://art/sounds/music/overhead-view-183879.mp3" id="1_gfiyb"]
+[ext_resource type="Script" uid="uid://u01v5fyk0r4c" path="res://global/generic_music.gd" id="2_yh0le"]
+
+[node name="GenericMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_gfiyb")
+autoplay = true
+script = ExtResource("2_yh0le")
