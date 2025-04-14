@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5cmowbtrm3cq"]
+[gd_scene load_steps=6 format=3 uid="uid://b5cmowbtrm3cq"]
 
 [ext_resource type="Script" uid="uid://ct0b41liljcb5" path="res://global/coin_counter.gd" id="1_8u6v6"]
 [ext_resource type="Texture2D" uid="uid://bgjh4bx21b1ym" path="res://art/asset/CoinBag.png" id="1_062gn"]
+[ext_resource type="Texture2D" uid="uid://bgu6ig4lfdprk" path="res://art/asset/CoinCounter.png" id="2_iuxes"]
+[ext_resource type="Theme" uid="uid://dptf7gvb55y3m" path="res://resources/Textures/UIPurpose/shopPurchase.tres" id="3_rhgk2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ch57"]
 
 [node name="CoinCounter" type="Control"]
 layout_mode = 3
@@ -19,15 +23,17 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 5.0
-offset_top = -95.0
+offset_top = -120.0
 offset_right = 173.0
-offset_bottom = -5.0
+offset_bottom = -30.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5ch57")
 
 [node name="ActualBackground" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_right = 168.0
-offset_bottom = 90.0
+offset_right = 190.0
+offset_bottom = 110.0
+texture = ExtResource("2_iuxes")
 
 [node name="Label" type="Label" parent="Panel/ActualBackground"]
 layout_mode = 1
@@ -36,22 +42,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 5.0
-offset_top = -11.5
-offset_right = 45.0
-offset_bottom = 11.5
+offset_left = -43.0
+offset_top = -20.0
+offset_right = 60.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "100"
+theme = ExtResource("3_rhgk2")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+ellipsis_char = "+"
 
 [node name="TextureRect" type="TextureRect" parent="Panel/ActualBackground"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -36.0
-offset_right = 600.0
-offset_bottom = 564.0
+offset_left = 3.0
+offset_top = -26.0
+offset_right = 603.0
+offset_bottom = 574.0
 grow_vertical = 2
-scale = Vector2(0.115, 0.115)
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("1_062gn")

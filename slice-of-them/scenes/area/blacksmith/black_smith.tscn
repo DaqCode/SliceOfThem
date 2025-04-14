@@ -1,7 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://bjjtx24302mpi"]
+[gd_scene load_steps=36 format=3 uid="uid://bjjtx24302mpi"]
 
 [ext_resource type="Script" uid="uid://drli7g8kouc5m" path="res://scenes/area/blacksmith/black_smith.gd" id="1_dn51w"]
-[ext_resource type="Texture2D" uid="uid://yx7gw0ihc1y8" path="res://art/background/blacksmith/BlacksmithBackground.png" id="2_f7ad2"]
+[ext_resource type="Texture2D" uid="uid://b5osbi5pgmpnx" path="res://art/background/blacksmith/BlacksmithBackground.png" id="2_f7ad2"]
 [ext_resource type="Texture2D" uid="uid://cc7be1y5b1qte" path="res://art/background/blacksmith/BlackSmithBud.png" id="2_lmo6l"]
 [ext_resource type="FontFile" uid="uid://c2riwsinrhobw" path="res://resources/Fonts/CatShop.ttf" id="3_cq6jc"]
 [ext_resource type="Texture2D" uid="uid://b278i00un6pvv" path="res://art/background/blacksmith/Gaze.png" id="3_e6hc8"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ckihcyos0wvya" path="res://art/drinkable/ReturnPotion.png" id="11_vdt2i"]
 [ext_resource type="Texture2D" uid="uid://blkxphxw0xqct" path="res://art/drinkable/LuckPotion.png" id="12_18veb"]
 [ext_resource type="Texture2D" uid="uid://dsxtxr6fv3dam" path="res://art/drinkable/DarknessPotion.png" id="13_abh1q"]
+[ext_resource type="Theme" uid="uid://newxx6db1803" path="res://resources/Textures/UIPurpose/MapMenuThemeHover.tres" id="14_uw750"]
 [ext_resource type="Texture2D" uid="uid://c3xwyj5m3pv1f" path="res://art/asset/table..png" id="18_jfkgc"]
 [ext_resource type="Texture2D" uid="uid://dvl7q4o2reu2a" path="res://art/asset/Signs.png" id="19_sruxi"]
 [ext_resource type="PackedScene" uid="uid://b5cmowbtrm3cq" path="res://global/coin_counter.tscn" id="20_rl3jy"]
@@ -260,7 +261,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 4.99),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(719, 322), Vector2(720, 296)]
+"values": [Vector2(751, 429), Vector2(751, 416.81)]
 }
 
 [sub_resource type="Animation" id="Animation_awjlb"]
@@ -324,7 +325,7 @@ autowrap_mode = 2
 
 [node name="Gaze" type="Sprite2D" parent="."]
 position = Vector2(504, 427)
-scale = Vector2(0.58, 0.58)
+scale = Vector2(0.38, 0.38)
 texture = ExtResource("3_e6hc8")
 
 [node name="BlacksmithBud" type="TextureRect" parent="."]
@@ -332,13 +333,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 579.0
-offset_top = 194.0
-offset_right = 75.0
-offset_bottom = 194.0
+offset_left = 680.0
+offset_top = 366.0
+offset_right = 176.0
+offset_bottom = 366.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.335, 0.335)
+scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_lmo6l")
 
 [node name="UseItems" type="GridContainer" parent="."]
@@ -491,15 +492,16 @@ vertical_alignment = 1
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+theme = ExtResource("14_uw750")
 text = "Back To Menu
 "
 
 [node name="Sword" type="Node" parent="."]
 
 [node name="SwordImage" type="TextureRect" parent="Sword"]
-offset_left = 693.0
+offset_left = 723.0
 offset_top = 92.0
-offset_right = 1113.0
+offset_right = 1143.0
 offset_bottom = 512.0
 rotation = 1.5708
 scale = Vector2(0.555, 0.555)

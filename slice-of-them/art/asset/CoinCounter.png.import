@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5osbi5pgmpnx"
-path="res://.godot/imported/BlacksmithBackground.png-20eb4b030c733e70521bb9e970aabc16.ctex"
+uid="uid://bgu6ig4lfdprk"
+path="res://.godot/imported/CoinCounter.png-a5255b0dd129542f6ea32b56f1599a5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/background/blacksmith/BlacksmithBackground.png"
-dest_files=["res://.godot/imported/BlacksmithBackground.png-20eb4b030c733e70521bb9e970aabc16.ctex"]
+source_file="res://art/asset/CoinCounter.png"
+dest_files=["res://.godot/imported/CoinCounter.png-a5255b0dd129542f6ea32b56f1599a5a.ctex"]
 
 [params]
 
